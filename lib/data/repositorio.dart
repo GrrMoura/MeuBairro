@@ -1,0 +1,148 @@
+import 'package:ache_facil/model/item_model.dart';
+
+final allItens = <ItemModel>[
+  ItemModel(
+      id: 1,
+      name: 'Senhor Furtado',
+      profession: 'Vagabundo',
+      bairro: "centro",
+      email: "mailto:furtado@hotmail.com",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "799982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 2,
+      name: 'Girafales',
+      profession: 'Professor',
+      bairro: "Atalaia Nova",
+      email: "Girafales@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 3,
+      name: 'Seu Madruga',
+      profession: 'Vagabundo',
+      bairro: "jatobá",
+      email: "dsa@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 4,
+      name: 'Jaiminho',
+      profession: 'Carteiro',
+      bairro: "Atalaia Nova",
+      email: "aloha@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 5,
+      name: 'Chaves',
+      profession: 'Estudante',
+      bairro: "centro",
+      email: "aloha@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 6,
+      name: 'Senhor Barriga',
+      profession: 'Empresário',
+      bairro: "Atalaia Nova",
+      email: "aloha@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 7,
+      name: 'Dona florinda',
+      profession: 'do lar',
+      bairro: "Atalaia Nova",
+      email: "aloha@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 8,
+      name: 'Kiko',
+      profession: 'Estudante',
+      bairro: "Atalaia Nova",
+      email: "aloha@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 9,
+      name: 'Dona Clotilde',
+      profession: 'Aposentada',
+      bairro: "Atalaia Nova",
+      email: "aloha@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 10,
+      name: 'Pai do Kiko',
+      profession: 'Advogado',
+      bairro: "Centro",
+      email: "aloha@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 11,
+      name: 'Paty',
+      profession: 'Enfermeiro',
+      bairro: "Atalaia Nova",
+      email: "aloha@",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+  ItemModel(
+      id: 12,
+      name: 'Dona florinda',
+      profession: 'do lar',
+      bairro: "Atalaia Nova",
+      instagram: "https://www.instagram.com/atelieadhamelo/",
+      facebook: "https://www.facebook.com/geibison.moura",
+      whatsapp: "799982772728",
+      email: "aloha@",
+      phone: "tel:79982772728",
+      photo:
+          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+];
