@@ -1,4 +1,7 @@
-import 'package:ache_facil/screen/widgets/SearchBox.dart';
+import 'package:ache_facil/screen/widgets_home/widget_serch_home_page.dart';
+import 'package:ache_facil/screen/widgets_home/widget_category_list.dart';
+import 'package:ache_facil/screen/widgets_home/widget_header_home.dart';
+import 'package:ache_facil/screen/widgets_home/widget_box_carousel.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,28 +20,19 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
           backgroundColor: Theme.of(context).primaryColor,
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          body: ListView(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 30, 20, 5),
-                child:
-                    Text("Ache", style: Theme.of(context).textTheme.subtitle1),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
-                child: Text(
-                  "tudo no seu bairro",
-                  style: Theme.of(context).textTheme.subtitle2,
-                ),
-              ),
-              Expanded(child: SearchBox()),
+              const HeaderHome(),
+              SearchHome(),
+              const CategoryList(),
+              BoxCarousel(),
+              const Padding(padding: EdgeInsets.only(top: 50)),
               Container(
                 margin: const EdgeInsets.all(10),
                 color: Colors.amber,
-                height: 50,
+                height: 40,
                 width: 390,
-                child: const Text("ANUNCIOS"),
+                child: const Text("ANúNCIOS"),
               )
             ],
           )),

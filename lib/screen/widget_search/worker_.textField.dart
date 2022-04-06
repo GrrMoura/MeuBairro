@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-class SearchBoxPrincipal extends StatefulWidget {
+class SearchTextField extends StatefulWidget {
   final String text;
   final ValueChanged<String> onChanged;
   final String hintText;
 
-  const SearchBoxPrincipal({
+  const SearchTextField({
     Key? key,
     required this.text,
     required this.onChanged,
@@ -15,17 +15,27 @@ class SearchBoxPrincipal extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SearchBoxPrincipalState createState() => _SearchBoxPrincipalState();
+  _SearchTextFieldState createState() => _SearchTextFieldState();
 }
 
-class _SearchBoxPrincipalState extends State<SearchBoxPrincipal> {
+class _SearchTextFieldState extends State<SearchTextField> {
   final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 55,
       width: 250,
+
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        gradient: const LinearGradient(
+            tileMode: TileMode.clamp,
+            begin: FractionalOffset(0.0, 0.0),
+            end: FractionalOffset(1.0, 0.1),
+            stops: [0.0, 1.0],
+            colors: [Color(0xfff5deb3), Color(0xfff08080)]),
+      ),
       //padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
       margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
       child: TextField(
@@ -39,11 +49,9 @@ class _SearchBoxPrincipalState extends State<SearchBoxPrincipal> {
               size: 25,
               color: Theme.of(context).colorScheme.secondary.withOpacity(0.4)),
           hintText: widget.hintText,
-          filled: true,
-          fillColor: Colors.white,
           labelStyle: Theme.of(context).textTheme.headline5,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(22),
+            borderRadius: BorderRadius.circular(15),
           ),
         ),
         onChanged: widget.onChanged,

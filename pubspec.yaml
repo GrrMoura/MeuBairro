@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   url_launcher: ^6.0.20
   font_awesome_flutter: ^10.1.0
+  carousel_slider: ^4.0.0
+  sqflite: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -57,9 +59,14 @@ flutter:
   assets:
     - assets/images/
   fonts:
-    - family: Source Serif Pro
+    - family: Lato
       fonts:
-        - asset: assets/fonts/SourceSerifPro-LightItalic.ttf
+        - asset: assets/fonts/Lato-Light.ttf
+  
+    - family: Prata
+      fonts:
+        - asset: assets/fonts/Prata-regular.ttf
+        
        
   #   - family: Trajan Pro
   #     fonts:

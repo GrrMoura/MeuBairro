@@ -1,5 +1,5 @@
 import 'package:ache_facil/android/android_style.dart';
-import 'package:ache_facil/screen/home_page_view.dart';
+import 'package:ache_facil/screen/default_tab_controller.dart';
 import 'package:flutter/material.dart';
 
 class AndroidApp extends StatelessWidget {
@@ -8,8 +8,8 @@ class AndroidApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: androidTheme(),
-      home: HomePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        theme: androidTheme(),
+        home: const DefaultTabController(length: 3, child: TabsPage()));
   }
 }

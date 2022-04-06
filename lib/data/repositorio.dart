@@ -6,13 +6,12 @@ final allItens = <ItemModel>[
       name: 'Senhor Furtado',
       profession: 'Vagabundo',
       bairro: "centro",
-      email: "mailto:furtado@hotmail.com",
+      email: "furtado@hotmail.com",
       instagram: "https://www.instagram.com/atelieadhamelo/",
       facebook: "https://www.facebook.com/geibison.moura",
-      whatsapp: "799982772728",
+      whatsapp: "5579988311234",
       phone: "799982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photo: "https://pbs.twimg.com/media/Dpg-wf_XUAEZnld.jpg"),
   ItemModel(
       id: 2,
       name: 'Girafales',
@@ -21,10 +20,10 @@ final allItens = <ItemModel>[
       email: "Girafales@",
       instagram: "https://www.instagram.com/atelieadhamelo/",
       facebook: "https://www.facebook.com/geibison.moura",
-      whatsapp: "799982772728",
+      whatsapp: "5579998277272",
       phone: "tel:79982772728",
       photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+          'https://www.hypeness.com.br/1/2021/12/2356aeca-edit_chaves_revelac%CC%A7o%CC%83es_1.jpg'),
   ItemModel(
       id: 3,
       name: 'Seu Madruga',
@@ -36,7 +35,7 @@ final allItens = <ItemModel>[
       whatsapp: "799982772728",
       phone: "tel:79982772728",
       photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+          'https://www.hypeness.com.br/1/2021/12/2356aeca-edit_chaves_revelac%CC%A7o%CC%83es_1.jpg'),
   ItemModel(
       id: 4,
       name: 'Jaiminho',

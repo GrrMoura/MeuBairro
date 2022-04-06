@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
 
-const primaryColor = Color(0xfff6f6f6);
+const primaryColor = Color(0xffF8F0E3); // Color(0xfff6f6f6);
 const accentColor = Color(0xff111111);
 const intensidade = Colors.black;
-const background = Colors.white;
+const background = Color(0xffF8F6F0);
 
 ThemeData androidTheme() {
   return ThemeData(
       textTheme: const TextTheme(
-          headline4: TextStyle(
-            color: accentColor,
-            fontSize: 14,
-          ),
-          headline5: TextStyle(color: accentColor, fontSize: 12),
-          headline6: TextStyle(color: accentColor, fontSize: 10),
-          subtitle1: TextStyle(
-              color: accentColor, fontSize: 30, fontFamily: 'Source Serif Pro'),
-          subtitle2: TextStyle(color: accentColor, fontSize: 20)),
+          headline1:
+              TextStyle(color: accentColor, fontSize: 31, fontFamily: "Lato"),
+          headline2:
+              TextStyle(color: accentColor, fontSize: 26, fontFamily: "Lato"),
+          headline3:
+              TextStyle(color: accentColor, fontSize: 21, fontFamily: "Lato"),
+          headline4:
+              TextStyle(color: accentColor, fontSize: 17, fontFamily: "Lato"),
+          headline5:
+              TextStyle(color: accentColor, fontSize: 13, fontFamily: "Lato"),
+          headline6:
+              TextStyle(color: accentColor, fontSize: 10, fontFamily: "Lato"),
+          subtitle1:
+              TextStyle(color: accentColor, fontSize: 25, fontFamily: 'Prata'),
+          subtitle2:
+              TextStyle(color: accentColor, fontSize: 20, fontFamily: "Prata")),
       backgroundColor: background,
       primaryColor: primaryColor,
       colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColor));

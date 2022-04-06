@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 const brightness = Brightness.light;
-const primaryColor = const Color(0xffaacff);
+const primaryColor = Color.fromARGB(15, 74, 13, 78);
 const accentColor = Color.fromARGB(255, 213, 250, 2);
 
-CupertinoThemeData IosTheme() {
+CupertinoThemeData iosTheme() {
   return const CupertinoThemeData(
     brightness: brightness,
   );
