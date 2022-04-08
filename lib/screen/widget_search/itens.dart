@@ -1,3 +1,4 @@
+import 'package:ache_facil/controllers/launcher_controller.dart';
 import 'package:ache_facil/model/item_model.dart';
 import 'package:ache_facil/screen/detail_item_pageView.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class _ItensState extends State<Itens> {
   final double circleRadius = 100.0;
 
   final double circleBorderWidth = 8.0;
-  Color color = const Color(0xffE9E4D4);
+  Color color = Colors.white;
 
   @override
   Widget build(BuildContext context) => Stack(
@@ -27,7 +28,7 @@ class _ItensState extends State<Itens> {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               shadowColor: Colors.black,
               elevation: 6,
-              color: const Color(0xffE9E4D4),
+              color: Colors.white,
               child: Container(
                 margin:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -37,16 +38,25 @@ class _ItensState extends State<Itens> {
                       if (value) {
                         color = Colors.red;
                       } else {
-                        color = const Color(0xffE9E4D4);
+                        color = Colors.white;
                       }
                     });
                   },
                   title: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
-                        widget.itemModel.name,
-                        style: Theme.of(context).textTheme.subtitle1,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      DetailItemPage(widget.itemModel)));
+                        },
+                        child: Text(
+                          widget.itemModel.name,
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
                       ),
                       Text(
                         widget.itemModel.profession,
@@ -109,13 +119,13 @@ class _ItensState extends State<Itens> {
       onPressed: () {
         switch (opcao) {
           case "link":
-            // Launcher.link(itemModel);
+            Launcher.link(itemModel);
             break;
           case "whats":
-            //    Launcher.whats(itemModel);
+            Launcher.whats(itemModel);
             break;
           case "email":
-            //     Launcher.email(itemModel);
+            Launcher.email(itemModel);
             break;
         }
       },

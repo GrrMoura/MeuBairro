@@ -8,9 +8,9 @@ class CompetenciaBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
       width: double.infinity,
-      margin: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+      margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
       color: Colors.white,
       child: Wrap(
         spacing: 10,

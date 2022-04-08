@@ -7,12 +7,12 @@ class SearchTextField extends StatefulWidget {
   final ValueChanged<String> onChanged;
   final String hintText;
 
-  const SearchTextField({
-    Key? key,
-    required this.text,
-    required this.onChanged,
-    required this.hintText,
-  }) : super(key: key);
+  const SearchTextField(
+      {Key? key,
+      required this.text,
+      required this.onChanged,
+      required this.hintText})
+      : super(key: key);
 
   @override
   _SearchTextFieldState createState() => _SearchTextFieldState();

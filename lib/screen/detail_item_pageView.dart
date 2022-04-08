@@ -19,25 +19,24 @@ class DetailItemPage extends StatelessWidget {
           elevation: 0,
           iconTheme: IconTheme.of(context),
           backgroundColor: Theme.of(context).primaryColor),
-      body: ListView(
+      body: Column(
         children: [
           HeaderCard(itemModel: itemModel),
           BoxLocalization(itemModel: itemModel),
           const CompetenciaBox(),
           SizedBox(
-            height: 180,
+            height: 250,
             child: ListView(
-              children: [
-                const SobreBox(),
-              ],
+              children: const [SobreBox()],
             ),
           ),
+          const Expanded(child: SizedBox(height: 10)),
           Container(
             margin: const EdgeInsets.all(10),
             color: Colors.amber,
             height: 29,
             width: 390,
-            child: const Text("ANúNCIOS"),
+            child: const Text("ANÚNCIOS"),
           )
         ],
       ),

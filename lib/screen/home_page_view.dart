@@ -20,19 +20,19 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
           backgroundColor: Theme.of(context).primaryColor,
-          body: ListView(
+          body: Column(
             children: [
               const HeaderHome(),
               SearchHome(),
               const CategoryList(),
               BoxCarousel(),
-              const Padding(padding: EdgeInsets.only(top: 50)),
+              const Expanded(child: Padding(padding: EdgeInsets.only(top: 30))),
               Container(
                 margin: const EdgeInsets.all(10),
                 color: Colors.amber,
                 height: 40,
                 width: 390,
-                child: const Text("ANúNCIOS"),
+                child: const Text("ANÚNCIOS"),
               )
             ],
           )),

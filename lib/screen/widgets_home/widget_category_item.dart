@@ -10,7 +10,7 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 120,
-      padding: const EdgeInsets.only(left: 10, top: 10),
+      padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
       child: ElevatedButton(
         style: TextButton.styleFrom(
             elevation: 5,
@@ -19,16 +19,19 @@ class CategoryItem extends StatelessWidget {
             backgroundColor:
                 Theme.of(context).backgroundColor), // const Color(0xfffffafa)),
         onPressed: () {},
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Icon(icon, size: 25),
-            const SizedBox(height: 5),
-            Text(
-              label,
-              style: const TextStyle(color: Colors.black),
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(icon, size: 25),
+              const SizedBox(height: 5),
+              Text(
+                label,
+                style: const TextStyle(color: Colors.black),
+              )
+            ],
+          ),
         ),
       ),
     );

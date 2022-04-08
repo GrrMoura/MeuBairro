@@ -15,25 +15,14 @@ class BoxCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50),
+      padding: const EdgeInsets.only(top: 15),
       child: CarouselSlider(
-        items: imgList
-            .map(
-              (item) => Center(
-                child: Image.asset(
-                  item,
-                  fit: BoxFit.cover,
-                  width: 500,
-                ),
-              ),
-            )
-            .toList(),
-        options: CarouselOptions(
-          autoPlay: true,
-          aspectRatio: 2.0,
-          enlargeCenterPage: true,
-        ),
-      ),
+          items: imgList
+              .map((item) => Center(
+                  child: Image.asset(item, fit: BoxFit.cover, width: 500)))
+              .toList(),
+          options: CarouselOptions(
+              autoPlay: true, aspectRatio: 2.0, enlargeCenterPage: true)),
     );
   }
 }

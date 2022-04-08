@@ -7,8 +7,10 @@ class CategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60,
+    return Container(
+      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+      margin: EdgeInsets.only(bottom: 20, top: 10, left: 10, right: 10),
+      height: 100,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [

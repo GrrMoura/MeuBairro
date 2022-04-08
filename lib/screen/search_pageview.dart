@@ -29,27 +29,30 @@ class SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Theme.of(context).backgroundColor,
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(children: [buildSearchPrincipal(), buildSearchBairro()]),
-              Padding(
-                  padding: const EdgeInsets.only(bottom: 10, left: 10),
-                  child: Text(
-                    " ${itens.length} Resultados ",
-                  )),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: itens.length,
-                  itemBuilder: (context, index) {
-                    final item = itens[index];
+          backgroundColor: Theme.of(context).primaryColor,
+          body: Padding(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(children: [buildSearchPrincipal(), buildSearchBairro()]),
+                Padding(
+                    padding: const EdgeInsets.only(bottom: 10, left: 10),
+                    child: Text(
+                      " ${itens.length} Resultados ",
+                    )),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: itens.length,
+                    itemBuilder: (context, index) {
+                      final item = itens[index];
 
-                    return Itens(itemModel: item);
-                  },
+                      return Itens(itemModel: item);
+                    },
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           )),
     );
   }

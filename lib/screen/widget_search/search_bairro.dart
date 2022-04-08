@@ -36,8 +36,7 @@ class _SearchBairroState extends State<SearchBairro> {
             stops: [0.0, 1.0],
             colors: [Color(0xfff5deb3), Color(0xfff08080)]),
       ),
-      //padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
-      // margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+
       child: TextField(
         style: Theme.of(context).textTheme.headline4,
         cursorColor: Theme.of(context).colorScheme.secondary,

@@ -10,6 +10,6 @@ class AndroidApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: androidTheme(),
-        home: const DefaultTabController(length: 3, child: TabsPage()));
+        home: DefaultTabController(length: 3, child: TabsPage()));
   }
 }

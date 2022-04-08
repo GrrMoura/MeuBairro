@@ -1,5 +1,6 @@
-import 'package:ache_facil/screen/widget_perfil%5D/widget_favoritos_itens.dart';
+import 'package:ache_facil/screen/widget_perfil/widget_favoritos_itens.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PerfilPage extends StatelessWidget {
   PerfilPage({Key? key}) : super(key: key);
@@ -7,9 +8,14 @@ class PerfilPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
-      appBar:
-          AppBar(elevation: 0, backgroundColor: Theme.of(context).primaryColor),
+      backgroundColor: Theme.of(context).primaryColor,
+      appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Theme.of(context).primaryColor,
+          iconTheme: IconTheme.of(context)),
+      drawer: const Drawer(
+        backgroundColor: Colors.white,
+      ),
       body: ListView(
         children: [
           Padding(
@@ -19,41 +25,30 @@ class PerfilPage extends StatelessWidget {
               children: [
                 Text("Meus Favoritos",
                     style: Theme.of(context).textTheme.subtitle2),
-                Padding(
-                  padding: const EdgeInsets.only(left: 70),
+                const Padding(
+                  padding:
+                      EdgeInsets.only(left: 45, right: 35, bottom: 20, top: 10),
                   child: IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.ac_unit)),
+                      onPressed: null,
+                      icon: Icon(FontAwesomeIcons.heartPulse,
+                          color: Colors.red, size: 40)),
                 )
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.only(left: 10.0),
             child: Wrap(
-              children: [
+              children: const [
                 FavoritoItens(),
-                Card(
-                  child: Container(
-                      color: Colors.white,
-                      height: 200,
-                      width: 180,
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            child: Text(
-                              "Seu Madruga",
-                              style: Theme.of(context).textTheme.subtitle2,
-                            ),
-                          ),
-                          const CircleAvatar(
-                              radius: 50,
-                              backgroundImage:
-                                  AssetImage(("assets/images/seuMadruga.jpg"))),
-                          const Text("Profissão")
-                        ],
-                      )),
-                ),
+                FavoritoItens(),
+                FavoritoItens(),
+                FavoritoItens(),
+                FavoritoItens(),
+                FavoritoItens(),
+                FavoritoItens(),
+                FavoritoItens(),
+                FavoritoItens()
               ],
             ),
           )
