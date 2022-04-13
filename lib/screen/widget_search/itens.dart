@@ -1,5 +1,5 @@
 import 'package:ache_facil/controllers/launcher_controller.dart';
-import 'package:ache_facil/model/item_model.dart';
+import 'package:ache_facil/models/item_model.dart';
 import 'package:ache_facil/screen/detail_item_pageView.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,7 +17,7 @@ class _ItensState extends State<Itens> {
   final double circleRadius = 100.0;
 
   final double circleBorderWidth = 8.0;
-  Color color = Colors.white;
+  Color color = Color(0xff16F529);
 
   @override
   Widget build(BuildContext context) => Stack(
@@ -28,7 +28,7 @@ class _ItensState extends State<Itens> {
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               shadowColor: Colors.black,
               elevation: 6,
-              color: Colors.white,
+              color: Theme.of(context).backgroundColor,
               child: Container(
                 margin:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -36,9 +36,9 @@ class _ItensState extends State<Itens> {
                   onExpansionChanged: (value) {
                     setState(() {
                       if (value) {
-                        color = Colors.red;
-                      } else {
                         color = Colors.white;
+                      } else {
+                        color = Theme.of(context).backgroundColor;
                       }
                     });
                   },
@@ -169,7 +169,7 @@ class Imagebox extends StatelessWidget {
               shape: const CircleBorder(),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(itemModel.photo),
+                image: NetworkImage(itemModel.photos![0]),
               ),
             ),
           ),

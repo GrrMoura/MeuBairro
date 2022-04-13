@@ -37,7 +37,11 @@ dependencies:
   url_launcher: ^6.0.20
   font_awesome_flutter: ^10.1.0
   carousel_slider: ^4.0.0
+  shared_preferences: ^2.0.13
   sqflite: ^2.0.2
+ 
+
+ 
 
 dev_dependencies:
   flutter_test:

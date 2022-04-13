@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-const primaryColor = Color(0xffF8F0E3); // Color(0xfff6f6f6);
-const accentColor = Color(0xff111111);
+const primaryColor = Color(0xf3FF6700); // Color(0xfff6f6f6);
+const accentColor = Colors.black; //Color(0xff16F529);
 const intensidade = Colors.black;
-const background = Color(0xffF8F6F0);
-
+const background = Color(0xff16F529);
 ThemeData androidTheme() {
   return ThemeData(
       textTheme: const TextTheme(

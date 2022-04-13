@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:ache_facil/data/repositorio.dart';
-import 'package:ache_facil/model/item_model.dart';
+import 'package:ache_facil/models/item_model.dart';
 import 'package:ache_facil/screen/widget_search/itens.dart';
 import 'package:ache_facil/screen/widget_search/search_bairro.dart';
 import 'package:ache_facil/screen/widget_search/worker_.textField.dart';

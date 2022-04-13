@@ -2,7 +2,8 @@ class ItemModel {
   final int id;
   final String profession;
   final String name;
-  final String photo; //TODO: implementar lista de fotos, endereço e descricao
+
+  List<String>? photos;
   final String bairro;
   final String phone;
   final String email;
@@ -14,7 +15,7 @@ class ItemModel {
     required this.id,
     required this.name,
     required this.profession,
-    required this.photo,
+    required this.photos,
     required this.bairro,
     required this.phone,
     required this.email,
@@ -27,7 +28,7 @@ class ItemModel {
         id: json['id'],
         name: json['name'],
         profession: json['profession'],
-        photo: json['photo'],
+        photos: json['photos'],
         bairro: json['bairro'],
         phone: json['phone'],
         email: json['email'],
@@ -40,7 +41,7 @@ class ItemModel {
         'id': id,
         'profession': profession,
         'name': name,
-        'photo': photo,
+        'photos': photos,
         'bairro': bairro,
         'email': email,
         'instagram': instagram,

@@ -1,4 +1,4 @@
-import 'package:ache_facil/model/item_model.dart';
+import 'package:ache_facil/models/item_model.dart';
 import 'package:flutter/material.dart';
 
 class HeaderCard extends StatelessWidget {
@@ -29,7 +29,7 @@ class HeaderCard extends StatelessWidget {
                         color: Colors.grey, blurRadius: 9, spreadRadius: 2)
                   ],
                   image: DecorationImage(
-                      image: NetworkImage(itemModel.photo),
+                      image: NetworkImage(itemModel.photos![0]),
                       fit: BoxFit.fitHeight),
                   borderRadius: const BorderRadius.all(Radius.circular(50))),
             ),

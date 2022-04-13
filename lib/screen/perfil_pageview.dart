@@ -1,8 +1,10 @@
+import 'package:ache_facil/models/user_model.dart';
 import 'package:ache_facil/screen/widget_perfil/widget_favoritos_itens.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PerfilPage extends StatelessWidget {
+  final UserModel model = UserModel();
   PerfilPage({Key? key}) : super(key: key);
 
   @override

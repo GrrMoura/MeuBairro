@@ -28,14 +28,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
       width: 250,
 
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        gradient: const LinearGradient(
-            tileMode: TileMode.clamp,
-            begin: FractionalOffset(0.0, 0.0),
-            end: FractionalOffset(1.0, 0.1),
-            stops: [0.0, 1.0],
-            colors: [Color(0xfff5deb3), Color(0xfff08080)]),
-      ),
+          borderRadius: BorderRadius.circular(15), color: Colors.white),
       //padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
       margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
       child: TextField(

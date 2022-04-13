@@ -1,4 +1,4 @@
-import 'package:ache_facil/model/item_model.dart';
+import 'package:ache_facil/models/item_model.dart';
 
 final allItens = <ItemModel>[
   ItemModel(
@@ -11,7 +11,7 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "5579988311234",
       phone: "799982772728",
-      photo: "https://pbs.twimg.com/media/Dpg-wf_XUAEZnld.jpg"),
+      photos: ["https://pbs.twimg.com/media/Dpg-wf_XUAEZnld.jpg"]),
   ItemModel(
       id: 2,
       name: 'Girafales',
@@ -22,8 +22,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "5579998277272",
       phone: "tel:79982772728",
-      photo:
-          'https://www.hypeness.com.br/1/2021/12/2356aeca-edit_chaves_revelac%CC%A7o%CC%83es_1.jpg'),
+      photos: [
+        'https://www.hypeness.com.br/1/2021/12/2356aeca-edit_chaves_revelac%CC%A7o%CC%83es_1.jpg'
+      ]),
   ItemModel(
       id: 3,
       name: 'Seu Madruga',
@@ -34,8 +35,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://www.hypeness.com.br/1/2021/12/2356aeca-edit_chaves_revelac%CC%A7o%CC%83es_1.jpg'),
+      photos: [
+        'https://www.hypeness.com.br/1/2021/12/2356aeca-edit_chaves_revelac%CC%A7o%CC%83es_1.jpg'
+      ]),
   ItemModel(
       id: 4,
       name: 'Jaiminho',
@@ -46,8 +48,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
   ItemModel(
       id: 5,
       name: 'Chaves',
@@ -58,8 +61,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
   ItemModel(
       id: 6,
       name: 'Senhor Barriga',
@@ -70,8 +74,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
   ItemModel(
       id: 7,
       name: 'Dona florinda',
@@ -82,8 +87,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
   ItemModel(
       id: 8,
       name: 'Kiko',
@@ -94,8 +100,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
   ItemModel(
       id: 9,
       name: 'Dona Clotilde',
@@ -106,8 +113,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
   ItemModel(
       id: 10,
       name: 'Pai do Kiko',
@@ -118,8 +126,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
   ItemModel(
       id: 11,
       name: 'Paty',
@@ -130,8 +139,9 @@ final allItens = <ItemModel>[
       facebook: "https://www.facebook.com/geibison.moura",
       whatsapp: "799982772728",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
   ItemModel(
       id: 12,
       name: 'Dona florinda',
@@ -142,6 +152,7 @@ final allItens = <ItemModel>[
       whatsapp: "799982772728",
       email: "aloha@",
       phone: "tel:79982772728",
-      photo:
-          'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
+      photos: [
+        'https://images.unsplash.com/photo-1615333619365-a44d7e655661?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+      ]),
 ];

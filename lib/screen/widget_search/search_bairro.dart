@@ -29,12 +29,7 @@ class _SearchBairroState extends State<SearchBairro> {
       width: 100,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        gradient: const LinearGradient(
-            tileMode: TileMode.clamp,
-            begin: FractionalOffset(0.0, 0.0),
-            end: FractionalOffset(1.0, 0.1),
-            stops: [0.0, 1.0],
-            colors: [Color(0xfff5deb3), Color(0xfff08080)]),
+        color: Colors.white,
       ),
 
       child: TextField(

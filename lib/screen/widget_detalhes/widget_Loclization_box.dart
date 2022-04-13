@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:ache_facil/model/item_model.dart';
+import 'package:ache_facil/models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -32,7 +32,8 @@ class BoxLocalization extends StatelessWidget {
                 FontAwesomeIcons.shop,
                 color: Colors.red,
               ),
-              label: const Text(" Venha comprar e ser feliz"))
+              label: const Text(
+                  " colocar contato aqui")) //TODO: colocar contato aqui
         ],
       ),
     );

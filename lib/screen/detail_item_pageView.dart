@@ -3,7 +3,7 @@
 import 'package:ache_facil/screen/widget_detalhes/widget_competencia_box.dart';
 import 'package:ache_facil/screen/widget_detalhes/widget_sobre_box.dart';
 import 'package:flutter/material.dart';
-import 'package:ache_facil/model/item_model.dart';
+import 'package:ache_facil/models/item_model.dart';
 import 'package:ache_facil/screen/widget_detalhes/widget_Loclization_box.dart';
 import 'package:ache_facil/screen/widget_detalhes/widget_header_box.dart';
 

@@ -1,5 +1,5 @@
 import 'package:ache_facil/data/repositorio.dart';
-import 'package:ache_facil/model/item_model.dart';
+import 'package:ache_facil/models/item_model.dart';
 import 'package:ache_facil/screen/home_page_view.dart';
 import 'package:ache_facil/screen/perfil_pageview.dart';
 import 'package:ache_facil/screen/search_pageview.dart';
@@ -8,7 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TabsPage extends StatelessWidget {
   TabsPage({Key? key}) : super(key: key);
-  List<ItemModel> itemModel = allItens;
+  final List<ItemModel> itemModel = allItens;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

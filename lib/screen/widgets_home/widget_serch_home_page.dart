@@ -19,7 +19,7 @@ class SearchHome extends StatelessWidget {
             stops: [0.0, 1.0],
             colors: [Color(0xfff5deb3), Color(0xfff08080)]),
       ),
-      margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+      margin: const EdgeInsets.fromLTRB(16, 1, 16, 16),
       child: TextFormField(
         style: Theme.of(context).textTheme.headline4,
         cursorColor: Theme.of(context).colorScheme.secondary,
