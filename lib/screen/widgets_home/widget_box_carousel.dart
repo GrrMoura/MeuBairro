@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class BoxCarousel extends StatelessWidget {
   BoxCarousel({Key? key}) : super(key: key);
@@ -14,12 +15,12 @@ class BoxCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 15),
+    return SizedBox(
+      height: 46.h,
       child: CarouselSlider(
           items: imgList
               .map((item) => Center(
-                  child: Image.asset(item, fit: BoxFit.cover, width: 500)))
+                  child: Image.asset(item, fit: BoxFit.cover, width: 80.h)))
               .toList(),
           options: CarouselOptions(
               autoPlay: true, aspectRatio: 2.0, enlargeCenterPage: true)),

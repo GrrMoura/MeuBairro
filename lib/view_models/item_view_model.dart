@@ -5,8 +5,11 @@ class ItemViewModel extends ItemModel {
       {required int id,
       required String name,
       required String profession,
-      required List<String>? photos,
-      required String bairro,
+      String? fotoPrincipal,
+      List<String>? photos,
+      required String state,
+      required String city,
+      required String district,
       required String phone,
       required String email,
       required String instagram,
@@ -17,7 +20,9 @@ class ItemViewModel extends ItemModel {
             name: name,
             profession: profession,
             photos: photos,
-            bairro: bairro,
+            state: state,
+            city: city,
+            district: district,
             phone: phone,
             email: email,
             instagram: instagram,
@@ -29,7 +34,9 @@ class ItemViewModel extends ItemModel {
     data['profession'] = profession;
     data['name'] = name;
     data['photos'] = photos;
-    data['bairro'] = bairro;
+    data['state'] = state;
+    data['city'] = city;
+    data['district'] = district;
     data['email'] = email;
     data['instagram'] = instagram;
     data['facebook'] = facebook;

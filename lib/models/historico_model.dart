@@ -4,6 +4,7 @@ class Historico {
   Historico({
     this.id,
     required this.name,
+    profression,
   });
 
   Map<String, dynamic> toMap() {

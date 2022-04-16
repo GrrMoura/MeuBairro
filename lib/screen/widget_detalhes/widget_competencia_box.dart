@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class CompetenciaBox extends StatelessWidget {
   const CompetenciaBox({
@@ -8,12 +9,14 @@ class CompetenciaBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadiusDirectional.circular(2.h)),
+      padding: EdgeInsets.all(2.h),
       width: double.infinity,
-      margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-      color: Colors.white,
+      margin: EdgeInsets.fromLTRB(2.h, 1.h, 2.h, 1.5.h),
       child: Wrap(
-        spacing: 10,
+        spacing: 2.h,
         children: const [
           OutlinedButton(
             onPressed: null,

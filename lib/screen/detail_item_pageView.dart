@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:ache_facil/models/item_model.dart';
 import 'package:ache_facil/screen/widget_detalhes/widget_Loclization_box.dart';
 import 'package:ache_facil/screen/widget_detalhes/widget_header_box.dart';
+import 'package:sizer/sizer.dart';
 
 class DetailItemPage extends StatelessWidget {
   final ItemModel itemModel;
@@ -25,17 +26,15 @@ class DetailItemPage extends StatelessWidget {
           BoxLocalization(itemModel: itemModel),
           const CompetenciaBox(),
           SizedBox(
-            height: 250,
+            height: 34.2.h,
             child: ListView(
               children: const [SobreBox()],
             ),
           ),
-          const Expanded(child: SizedBox(height: 10)),
           Container(
-            margin: const EdgeInsets.all(10),
             color: Colors.amber,
-            height: 29,
-            width: 390,
+            height: 4.5.h,
+            width: double.infinity,
             child: const Text("ANÚNCIOS"),
           )
         ],

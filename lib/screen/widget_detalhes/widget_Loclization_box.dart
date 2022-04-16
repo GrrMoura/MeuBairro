@@ -3,6 +3,7 @@
 import 'package:ache_facil/models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sizer/sizer.dart';
 
 class BoxLocalization extends StatelessWidget {
   const BoxLocalization({
@@ -15,22 +16,26 @@ class BoxLocalization extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadiusDirectional.circular(2.h)),
       width: double.infinity,
-      margin: const EdgeInsets.fromLTRB(20, 2, 20, 0),
-      color: Colors.white,
+      margin: EdgeInsets.fromLTRB(2.h, 0.5.h, 2.h, 0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextButton.icon(
               onPressed: null,
-              icon: const Icon(FontAwesomeIcons.locationPin, color: Colors.red),
+              icon: Icon(FontAwesomeIcons.locationPin,
+                  color: Colors.red, size: 3.8.h),
               label: const Text("Rua Maria Brasilina Cardoso ,n° 94,Centro ")),
           TextButton.icon(
               onPressed: null,
-              icon: const Icon(
+              icon: Icon(
                 FontAwesomeIcons.shop,
                 color: Colors.red,
+                size: 3.8.h,
               ),
               label: const Text(
                   " colocar contato aqui")) //TODO: colocar contato aqui

@@ -2,9 +2,10 @@ class ItemModel {
   final int id;
   final String profession;
   final String name;
-
   List<String>? photos;
-  final String bairro;
+  final String city;
+  final String state;
+  final String district;
   final String phone;
   final String email;
   final String instagram;
@@ -16,7 +17,9 @@ class ItemModel {
     required this.name,
     required this.profession,
     required this.photos,
-    required this.bairro,
+    required this.state,
+    required this.city,
+    required this.district,
     required this.phone,
     required this.email,
     required this.instagram,
@@ -29,7 +32,9 @@ class ItemModel {
         name: json['name'],
         profession: json['profession'],
         photos: json['photos'],
-        bairro: json['bairro'],
+        city: json['city'],
+        state: json['state'],
+        district: json['district'],
         phone: json['phone'],
         email: json['email'],
         instagram: json['instagram'],
@@ -42,7 +47,9 @@ class ItemModel {
         'profession': profession,
         'name': name,
         'photos': photos,
-        'bairro': bairro,
+        'state': photos,
+        'city': photos,
+        'district': photos,
         'email': email,
         'instagram': instagram,
         'facebook': facebook,

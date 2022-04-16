@@ -1,8 +1,11 @@
 import 'package:ache_facil/controllers/launcher_controller.dart';
+import 'package:ache_facil/data/sflite.dart';
+import 'package:ache_facil/models/favorite_model.dart';
 import 'package:ache_facil/models/item_model.dart';
 import 'package:ache_facil/screen/detail_item_pageView.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sizer/sizer.dart';
 
 class Itens extends StatefulWidget {
   const Itens({Key? key, required this.itemModel}) : super(key: key);
@@ -14,24 +17,25 @@ class Itens extends StatefulWidget {
 }
 
 class _ItensState extends State<Itens> {
-  final double circleRadius = 100.0;
+  var db = DatabaseConnect();
 
-  final double circleBorderWidth = 8.0;
-  Color color = Color(0xff16F529);
+  final double circleRadius = 13.h;
+
+  final double circleBorderWidth = 1.h;
+  Color color = const Color(0xff16F529);
 
   @override
   Widget build(BuildContext context) => Stack(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(top: circleRadius / 2.0),
+            padding: EdgeInsets.only(top: circleRadius / 2),
             child: Card(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              margin: EdgeInsets.symmetric(horizontal: 2.5.h, vertical: 2.5.h),
               shadowColor: Colors.black,
-              elevation: 6,
+              elevation: 2.h,
               color: Theme.of(context).backgroundColor,
               child: Container(
-                margin:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 0.1.h, vertical: 2.h),
                 child: ExpansionTile(
                   onExpansionChanged: (value) {
                     setState(() {
@@ -53,22 +57,16 @@ class _ItensState extends State<Itens> {
                                   builder: (context) =>
                                       DetailItemPage(widget.itemModel)));
                         },
-                        child: Text(
-                          widget.itemModel.name,
-                          style: Theme.of(context).textTheme.subtitle1,
-                        ),
+                        child: Text(widget.itemModel.name,
+                            style: Theme.of(context).textTheme.subtitle2),
                       ),
-                      Text(
-                        widget.itemModel.profession,
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
+                      Text(widget.itemModel.profession,
+                          style: Theme.of(context).textTheme.headline4),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            widget.itemModel.bairro,
-                            style: Theme.of(context).textTheme.headline3,
-                          ),
+                          Text(widget.itemModel.district,
+                              style: Theme.of(context).textTheme.headline3),
                         ],
                       ),
                     ],
@@ -90,8 +88,23 @@ class _ItensState extends State<Itens> {
                             Colors.black, "email"),
                         icons(FontAwesomeIcons.whatsapp,
                             widget.itemModel.whatsapp, Colors.green, "whats"),
-                        Container(width: 60),
-                        icons(FontAwesomeIcons.heart, "favorited", Colors.red)
+                        Container(width: 18.w),
+                        IconButton(
+                            onPressed: () {
+                              db.insertFavorite(FavoriteModel(
+                                  idItem: widget.itemModel.id,
+                                  name: widget.itemModel.name,
+                                  profession: widget.itemModel.profession,
+                                  city: widget.itemModel.city,
+                                  state: widget.itemModel.state,
+                                  district: widget.itemModel.district,
+                                  phone: widget.itemModel.phone,
+                                  email: widget.itemModel.email));
+                            },
+                            icon: const Icon(
+                              FontAwesomeIcons.heart,
+                              color: Colors.red,
+                            ))
                       ],
                     ),
                   ],
@@ -100,8 +113,8 @@ class _ItensState extends State<Itens> {
             ),
           ),
           Positioned(
-            left: 18,
-            top: 10,
+            left: 2.4.h,
+            top: 3.h,
             child: Imagebox(
                 itemModel: widget.itemModel,
                 circleRadius: circleRadius,

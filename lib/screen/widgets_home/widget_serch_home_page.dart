@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class SearchHome extends StatelessWidget {
@@ -9,35 +11,38 @@ class SearchHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
+      height: 7.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        gradient: const LinearGradient(
-            tileMode: TileMode.clamp,
-            begin: FractionalOffset(0.0, 0.0),
-            end: FractionalOffset(1.0, 0.1),
-            stops: [0.0, 1.0],
-            colors: [Color(0xfff5deb3), Color(0xfff08080)]),
+        borderRadius: BorderRadius.circular(20.h),
+        color: Colors.white,
       ),
-      margin: const EdgeInsets.fromLTRB(16, 1, 16, 16),
+      margin: EdgeInsets.symmetric(horizontal: 3.h),
       child: TextFormField(
         style: Theme.of(context).textTheme.headline4,
         cursorColor: Theme.of(context).colorScheme.secondary,
-        cursorHeight: 26,
-        textAlign: TextAlign.start,
+        cursorHeight: 3.h,
+        textAlign: TextAlign.left,
+        inputFormatters: <TextInputFormatter>[
+          LengthLimitingTextInputFormatter(23)
+        ],
         controller: controller,
         decoration: InputDecoration(
           suffixIcon: Icon(Icons.mic,
+              size: 3.h,
               color: Theme.of(context).colorScheme.secondary.withOpacity(0.6)),
+          prefixIcon: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search,
+                size: 4.h,
+                color:
+                    Theme.of(context).colorScheme.secondary.withOpacity(0.6)),
+          ),
+          hintText: 'Ache aqui',
           hintStyle: TextStyle(
               color: Theme.of(context).colorScheme.secondary.withOpacity(0.9),
-              fontSize: 18),
-          prefixIcon: Icon(Icons.search,
-              size: 25,
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.6)),
-          hintText: 'Ache agora',
+              fontSize: 13.sp),
           labelStyle: Theme.of(context).textTheme.headline5,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.h)),
         ),
       ),
     );

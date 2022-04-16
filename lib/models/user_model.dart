@@ -5,7 +5,7 @@ class UserModel {
   String? photo;
   String? phone;
   String? email;
-  List<Favorite>? favorites;
+  List<FavoriteModel>? favorites;
 
   UserModel({this.name, this.photo, this.phone, this.email, this.favorites});
 
@@ -15,9 +15,9 @@ class UserModel {
     phone = json['phone'];
     email = json['email'];
     if (json['favorites'] != null) {
-      favorites = <Favorite>[];
+      favorites = <FavoriteModel>[];
       json['favorites'].forEach((v) {
-        favorites!.add(Favorite.fromJson(v));
+        favorites!.add(FavoriteModel.fromJson(v));
       });
     }
   }

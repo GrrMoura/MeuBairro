@@ -6,6 +6,7 @@ import 'package:ache_facil/screen/widget_search/itens.dart';
 import 'package:ache_facil/screen/widget_search/search_bairro.dart';
 import 'package:ache_facil/screen/widget_search/worker_.textField.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -27,34 +28,31 @@ class SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          backgroundColor: Theme.of(context).primaryColor,
-          body: Padding(
-            padding: const EdgeInsets.only(top: 30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Row(children: [buildSearchPrincipal(), buildSearchBairro()]),
-                Padding(
-                    padding: const EdgeInsets.only(bottom: 10, left: 10),
-                    child: Text(
-                      " ${itens.length} Resultados ",
-                    )),
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: itens.length,
-                    itemBuilder: (context, index) {
-                      final item = itens[index];
+    return Scaffold(
+        backgroundColor: Theme.of(context).primaryColor,
+        body: Padding(
+          padding: EdgeInsets.only(top: 5.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(children: [buildSearchPrincipal(), buildSearchBairro()]),
+              Padding(
+                  padding: EdgeInsets.only(left: 2.h),
+                  child: Text(" ${itens.length} Resultados ",
+                      style: Theme.of(context).textTheme.headline6)),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: itens.length,
+                  itemBuilder: (context, index) {
+                    final item = itens[index];
 
-                      return Itens(itemModel: item);
-                    },
-                  ),
+                    return Itens(itemModel: item);
+                  },
                 ),
-              ],
-            ),
-          )),
-    );
+              ),
+            ],
+          ),
+        ));
   }
 
   Widget buildSearchPrincipal() => SearchTextField(
@@ -73,7 +71,7 @@ class SearchPageState extends State<SearchPage> {
     final itens = allItens.where((itemModel) {
       final professionLower = itemModel.profession.toLowerCase();
       final nameLower = itemModel.name.toLowerCase();
-      final bairroLower = itemModel.bairro.toLowerCase();
+      final bairroLower = itemModel.district.toLowerCase();
       final searchLower = query.toLowerCase();
 
       return professionLower.contains(searchLower) ||
