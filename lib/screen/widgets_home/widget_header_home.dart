@@ -16,17 +16,17 @@ class HeaderHome extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Olá, Zé Ramalho",
+              Text("Olá,\nZé Ramalho",
                   style: Theme.of(context).textTheme.subtitle2),
               CircleAvatar(
-                radius: 6.h,
+                radius: 8.h,
                 backgroundImage: const AssetImage("assets/images/ze.jpg"),
               )
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(3.h, 7.h, 3.h, 2.h),
+          padding: EdgeInsets.fromLTRB(7.h, 9.h, 3.h, 2.h),
           child: Text(
             "Precisa de profissional ou comércio?",
             style: Theme.of(context).textTheme.headline4,

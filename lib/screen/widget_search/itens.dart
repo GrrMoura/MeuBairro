@@ -1,3 +1,4 @@
+import 'package:ache_facil/android/android_style.dart';
 import 'package:ache_facil/controllers/launcher_controller.dart';
 import 'package:ache_facil/data/sflite.dart';
 import 'package:ache_facil/models/favorite_model.dart';
@@ -31,9 +32,9 @@ class _ItensState extends State<Itens> {
             padding: EdgeInsets.only(top: circleRadius / 2),
             child: Card(
               margin: EdgeInsets.symmetric(horizontal: 2.5.h, vertical: 2.5.h),
-              shadowColor: Colors.black,
+              shadowColor: black,
               elevation: 2.h,
-              color: Theme.of(context).backgroundColor,
+              color: background,
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 0.1.h, vertical: 2.h),
                 child: ExpansionTile(
@@ -42,7 +43,7 @@ class _ItensState extends State<Itens> {
                       if (value) {
                         color = Colors.white;
                       } else {
-                        color = Theme.of(context).backgroundColor;
+                        color = background;
                       }
                     });
                   },
@@ -58,15 +59,24 @@ class _ItensState extends State<Itens> {
                                       DetailItemPage(widget.itemModel)));
                         },
                         child: Text(widget.itemModel.name,
-                            style: Theme.of(context).textTheme.subtitle2),
+                            style: Theme.of(context)
+                                .textTheme
+                                .subtitle2!
+                                .copyWith(color: black)),
                       ),
                       Text(widget.itemModel.profession,
-                          style: Theme.of(context).textTheme.headline4),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline4!
+                              .copyWith(color: black)),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(widget.itemModel.district,
-                              style: Theme.of(context).textTheme.headline3),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline3!
+                                  .copyWith(color: black)),
                         ],
                       ),
                     ],
@@ -87,7 +97,7 @@ class _ItensState extends State<Itens> {
                         icons(FontAwesomeIcons.envelope, widget.itemModel.email,
                             Colors.black, "email"),
                         icons(FontAwesomeIcons.whatsapp,
-                            widget.itemModel.whatsapp, Colors.green, "whats"),
+                            widget.itemModel.whatsapp, Colors.white70, "whats"),
                         Container(width: 18.w),
                         IconButton(
                             onPressed: () {

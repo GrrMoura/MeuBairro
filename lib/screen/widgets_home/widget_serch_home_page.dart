@@ -1,3 +1,4 @@
+import 'package:ache_facil/android/android_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
@@ -18,7 +19,8 @@ class SearchHome extends StatelessWidget {
       ),
       margin: EdgeInsets.symmetric(horizontal: 3.h),
       child: TextFormField(
-        style: Theme.of(context).textTheme.headline4,
+        onFieldSubmitted: (value) {},
+        style: Theme.of(context).textTheme.headline4!.copyWith(color: black),
         cursorColor: Theme.of(context).colorScheme.secondary,
         cursorHeight: 3.h,
         textAlign: TextAlign.left,
@@ -38,10 +40,10 @@ class SearchHome extends StatelessWidget {
                     Theme.of(context).colorScheme.secondary.withOpacity(0.6)),
           ),
           hintText: 'Ache aqui',
-          hintStyle: TextStyle(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.9),
-              fontSize: 13.sp),
-          labelStyle: Theme.of(context).textTheme.headline5,
+          hintStyle: Theme.of(context)
+              .textTheme
+              .headline4!
+              .copyWith(color: Colors.black54),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.h)),
         ),
       ),

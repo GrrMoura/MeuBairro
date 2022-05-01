@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
             BoxCarousel(),
             Container(
               color: Colors.amber,
-              height: 4.5.h,
+              height: 4.h,
               width: double.infinity,
               child: const Text("ANÚNCIOS"),
             )

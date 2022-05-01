@@ -1,5 +1,7 @@
 import 'package:ache_facil/data/sflite.dart';
+import 'package:ache_facil/models/historico_model.dart';
 import 'package:ache_facil/models/user_model.dart';
+import 'package:ache_facil/screen/widget_perfil/widget_favoritos_itens.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
@@ -51,9 +53,9 @@ class PerfilPage extends StatelessWidget {
                       ? const Text("sem historico")
                       : ListView.builder(
                           itemCount: datalength,
-                          itemBuilder: (context, index) =>
-                            
-                        );
+                          itemBuilder: (context, index) {
+                            return FavoritoItens();
+                          });
                 })),
           )
         ],

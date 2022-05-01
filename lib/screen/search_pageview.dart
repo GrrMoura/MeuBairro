@@ -4,7 +4,7 @@ import 'package:ache_facil/data/repositorio.dart';
 import 'package:ache_facil/models/item_model.dart';
 import 'package:ache_facil/screen/widget_search/itens.dart';
 import 'package:ache_facil/screen/widget_search/search_bairro.dart';
-import 'package:ache_facil/screen/widget_search/worker_.textField.dart';
+import 'package:ache_facil/screen/widget_search/widget_search_principal.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -35,7 +35,10 @@ class SearchPageState extends State<SearchPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Row(children: [buildSearchPrincipal(), buildSearchBairro()]),
+              //   Row(children: [buildSearchPrincipal(), buildSearchBairro()]),
+              Row(children: [
+                buildSearchPrincipal(),
+              ]),
               Padding(
                   padding: EdgeInsets.only(left: 2.h),
                   child: Text(" ${itens.length} Resultados ",
@@ -61,11 +64,11 @@ class SearchPageState extends State<SearchPage> {
         onChanged: searchItem,
       );
 
-  Widget buildSearchBairro() => SearchBairro(
-        text: query,
-        hintText: 'bairro',
-        onChanged: searchItem,
-      );
+  // Widget buildSearchBairro() => SearchBairro(
+  //       text: query,
+  //       hintText: 'bairro',
+  //       onChanged: searchItem,
+  //     );
 
   void searchItem(String query) {
     final itens = allItens.where((itemModel) {

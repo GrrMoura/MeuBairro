@@ -16,7 +16,7 @@ class BoxCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 46.h,
+      height: 45.h,
       child: CarouselSlider(
           items: imgList
               .map((item) => Center(
