@@ -12,22 +12,23 @@ const black = Colors.black;
 ThemeData androidTheme() {
   return ThemeData(
       textTheme: TextTheme(
-          headline1: const TextStyle(
-              color: accentColor, fontSize: 31, fontFamily: "Lato"),
-          headline2: const TextStyle(
-              color: accentColor, fontSize: 26, fontFamily: "Lato"),
-          headline3: GoogleFonts.inter(
-              fontSize: 15.sp, color: Colors.white, letterSpacing: 1),
-          headline4: GoogleFonts.inter(
-              fontSize: 11.sp, color: Colors.white, letterSpacing: 1),
-          headline5: TextStyle(
-              color: accentColor, fontSize: 13.sp, fontFamily: "Lato"),
-          headline6: GoogleFonts.inter(
-              fontSize: 12.sp, color: Colors.white, letterSpacing: 1),
-          subtitle2: GoogleFonts.inter(
-              fontSize: 20.sp, color: Colors.white, letterSpacing: 1),
-          subtitle1: TextStyle(
-              color: accentColor, fontSize: 18.sp, fontFamily: "Prata")),
+        headline1: const TextStyle(
+            color: accentColor, fontSize: 31, fontFamily: "Lato"),
+        headline2: const TextStyle(
+            color: accentColor, fontSize: 26, fontFamily: "Lato"),
+        headline3: GoogleFonts.inter(
+            fontSize: 15.sp, color: Colors.white, letterSpacing: 1),
+        headline4: GoogleFonts.inter(
+            fontSize: 14.sp, color: Colors.white, letterSpacing: 1),
+        headline5: GoogleFonts.inter(
+            fontSize: 13.sp, color: Colors.white, letterSpacing: 1),
+        headline6: GoogleFonts.inter(
+            fontSize: 12.sp, color: Colors.white, letterSpacing: 1),
+        subtitle2: GoogleFonts.inter(
+            fontSize: 20.sp, color: Colors.white, letterSpacing: 1),
+        subtitle1: GoogleFonts.inter(
+            fontSize: 22.sp, color: Colors.white, letterSpacing: 1),
+      ),
       backgroundColor: background,
       primaryColor: primaryColor,
       colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColor));

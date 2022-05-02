@@ -3,6 +3,7 @@ class ItemModel {
   final String profession;
   final String name;
   List<String>? photos;
+  final String photo;
   final String city;
   final String state;
   final String district;
@@ -17,6 +18,7 @@ class ItemModel {
     required this.name,
     required this.profession,
     required this.photos,
+    required this.photo,
     required this.state,
     required this.city,
     required this.district,
@@ -32,6 +34,7 @@ class ItemModel {
         name: json['name'],
         profession: json['profession'],
         photos: json['photos'],
+        photo: json['photo'],
         city: json['city'],
         state: json['state'],
         district: json['district'],
@@ -47,6 +50,7 @@ class ItemModel {
         'profession': profession,
         'name': name,
         'photos': photos,
+        'photo': photo,
         'state': photos,
         'city': photos,
         'district': photos,

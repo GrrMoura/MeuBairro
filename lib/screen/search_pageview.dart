@@ -31,7 +31,7 @@ class SearchPageState extends State<SearchPage> {
     return Scaffold(
         backgroundColor: Theme.of(context).primaryColor,
         body: Padding(
-          padding: EdgeInsets.only(top: 5.h),
+          padding: EdgeInsets.only(top: 3.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

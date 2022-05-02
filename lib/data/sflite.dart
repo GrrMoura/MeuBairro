@@ -55,7 +55,7 @@ class DatabaseConnect {
               email: favorites[i]['email'],
               phone: favorites[i]['phone'],
               facebook: favorites[i]['facebook'],
-              instaram: favorites[i]['instagram'],
+              instagram: favorites[i]['instagram'],
               whatsapp: favorites[i]['whatsapp'],
             ));
   }
@@ -72,5 +72,10 @@ class DatabaseConnect {
   Future<void> deletarTermo(Historico termo) async {
     final db = await database;
     await db.delete('historico', where: 'id==?', whereArgs: [termo.id]);
+  }
+
+  Future<void> deleteAll() async {
+    final db = await database;
+    await db.rawDelete('delete from historico');
   }
 }

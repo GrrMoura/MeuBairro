@@ -1,8 +1,10 @@
+import 'package:ache_facil/data/sflite.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class HeaderHome extends StatelessWidget {
-  const HeaderHome({
+  var db = DatabaseConnect();
+  HeaderHome({
     Key? key,
   }) : super(key: key);
 
@@ -18,18 +20,23 @@ class HeaderHome extends StatelessWidget {
             children: [
               Text("Olá,\nZé Ramalho",
                   style: Theme.of(context).textTheme.subtitle2),
-              CircleAvatar(
-                radius: 8.h,
-                backgroundImage: const AssetImage("assets/images/ze.jpg"),
+              InkWell(
+                onTap: () {
+                  db.deleteAll();
+                },
+                child: CircleAvatar(
+                  radius: 7.h,
+                  backgroundImage: const AssetImage("assets/images/ze.jpg"),
+                ),
               )
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(7.h, 9.h, 3.h, 2.h),
+          padding: EdgeInsets.fromLTRB(5.7.h, 9.h, 3.h, 2.h),
           child: Text(
             "Precisa de profissional ou comércio?",
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headline6!,
           ),
         ),
       ],

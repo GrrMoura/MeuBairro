@@ -9,7 +9,7 @@ class FavoriteModel {
   String? photo;
   String? phone;
   String? email;
-  String? instaram;
+  String? instagram;
   String? facebook;
   String? whatsapp;
 
@@ -24,7 +24,7 @@ class FavoriteModel {
       this.photo,
       required this.phone,
       required this.email,
-      this.instaram,
+      this.instagram,
       this.facebook,
       this.whatsapp});
 
@@ -39,7 +39,7 @@ class FavoriteModel {
     photo = json['photo'];
     phone = json['phone'];
     email = json['email'];
-    instaram = json['instaram'];
+    instagram = json['instagram'];
     facebook = json['facebook'];
     whatsapp = json['whatsapp'];
   }
@@ -56,7 +56,7 @@ class FavoriteModel {
     data['photo'] = photo;
     data['phone'] = phone;
     data['email'] = email;
-    data['instaram'] = instaram;
+    data['instagram'] = instagram;
     data['facebook'] = facebook;
     data['whatsapp'] = whatsapp;
     return data;
@@ -73,7 +73,7 @@ class FavoriteModel {
       'photo': photo,
       'phone': phone,
       'email': email,
-      'instagram': instaram,
+      'instagram': instagram,
       'facebook': facebook,
       'whatsapp': whatsapp,
     };

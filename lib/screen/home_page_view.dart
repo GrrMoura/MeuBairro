@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).primaryColor,
         body: ListView(
           children: [
-            const HeaderHome(),
+            HeaderHome(),
             SearchHome(),
             BoxCarousel(),
             Container(

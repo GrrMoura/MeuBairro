@@ -19,7 +19,7 @@ void main() async {
   //     phone: "phone",
   //     email: "email",
   //     photo: "",
-  //     instaram: "",
+  //     instagram: "",
   //     facebook: "",
   //     whatsapp: ""));
   // print(await db.getHistorico());

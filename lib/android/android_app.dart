@@ -13,8 +13,8 @@ class AndroidApp extends StatelessWidget {
       return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: androidTheme(),
-          home: DefaultTabController(length: 3, child: TabsPage()));
-      //  home: LoginPage());
+          //home: DefaultTabController(length: 3, child: TabsPage()));
+          home: LoginPage());
     });
   }
 }

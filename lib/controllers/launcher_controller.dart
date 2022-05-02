@@ -21,9 +21,11 @@ class Launcher {
   }
 
   static Future<void> whats(String phone) async {
-    var whatsappUrl = "whatsapp://send?phone=$phone";
-    await canLaunch(whatsappUrl)
-        ? launch(whatsappUrl)
+    String whatsMessage = "Olá, tudo bem?\nte achei no app meu BairroTem. ";
+    String whatsAppUrl = "https://wa.me/$phone/?text=$whatsMessage";
+
+    await canLaunch(whatsAppUrl)
+        ? launch(whatsAppUrl)
         : debugPrint(
             "open whatsapp app link or do a snackbar with notification that there is no whatsapp installed");
   }

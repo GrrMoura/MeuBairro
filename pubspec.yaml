@@ -42,6 +42,7 @@ dependencies:
   sizer: ^2.0.15
   google_fonts: ^2.3.2
   flutter_svg: ^1.0.3
+  get: ^4.6.1
  
 
  
