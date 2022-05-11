@@ -1,37 +1,51 @@
-import 'package:ache_facil/data/repositorio.dart';
-import 'package:ache_facil/models/item_model.dart';
+import 'package:ache_facil/android/android_style.dart';
 import 'package:ache_facil/screen/home_page_view.dart';
 import 'package:ache_facil/screen/perfil_pageview.dart';
 import 'package:ache_facil/screen/search_pageview.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:sizer/sizer.dart';
 
-class TabsPage extends StatelessWidget {
+class TabsPage extends StatefulWidget {
   TabsPage({Key? key}) : super(key: key);
-  final List<ItemModel> itemModel = allItens;
+
+  @override
+  State<TabsPage> createState() => _TabsPageState();
+}
+
+class _TabsPageState extends State<TabsPage> {
+  int? index = 0;
+
+  final screens = [
+    const HomePage(),
+    const SearchPage(),
+    PerfilPage(),
+  ];
+
+  final items = <Widget>[
+    const Icon(Icons.home, size: 30),
+    const Icon(Icons.search, size: 30),
+    const Icon(Icons.people, size: 30)
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: TabBarView(
-        children: [
-          const HomePage(),
-          const SearchPage(),
-          PerfilPage(),
-        ],
-      ),
-      bottomNavigationBar: TabBar(
-        tabs: const [
-          Tab(icon: Icon(FontAwesomeIcons.house)),
-          Tab(icon: Icon(FontAwesomeIcons.magnifyingGlass)),
-          Tab(icon: Icon(FontAwesomeIcons.user))
-        ],
-        indicatorWeight: 0.5.h,
-        indicatorColor: Colors.orange,
-        labelColor: Colors.orange,
-        indicatorSize: TabBarIndicatorSize.label,
-        unselectedLabelColor: Colors.black54,
-      ),
-    );
+        appBar: AppBar(
+          backgroundColor: primaryColor,
+          elevation: 0.1,
+        ),
+        backgroundColor: primaryColor,
+        body: screens[index!],
+        bottomNavigationBar: CurvedNavigationBar(
+          backgroundColor: primaryColor,
+          color: background,
+          animationDuration: const Duration(milliseconds: 300),
+          items: items,
+          height: 60,
+          index: index!,
+          onTap: (index) {
+            setState(() => this.index = index);
+          },
+        ));
   }
 }

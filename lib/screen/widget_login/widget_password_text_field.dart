@@ -1,12 +1,17 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:ache_facil/android/android_style.dart';
+import 'package:ache_facil/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PasswordTextField extends StatelessWidget {
+  final GetxLoginController controller = Get.put(GetxLoginController());
+
   final size;
-  const PasswordTextField(this.size, {Key? key}) : super(key: key);
+  var model; // = loginViewModel;
+  PasswordTextField(this.model, this.size, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +31,12 @@ class PasswordTextField extends StatelessWidget {
 
             //password textField
             Expanded(
-              child: TextField(
+                child: GetBuilder<GetxLoginController>(
+              builder: (controller) => TextFormField(
+                obscureText: controller.showPassword,
                 maxLines: 1,
                 cursorColor: black,
-                keyboardType: TextInputType.visiblePassword,
-                obscureText: true,
+                keyboardType: TextInputType.text,
                 style: GoogleFonts.inter(
                     fontSize: 14.0, color: black, fontWeight: FontWeight.w500),
                 decoration: InputDecoration(
@@ -39,10 +45,29 @@ class PasswordTextField extends StatelessWidget {
                         fontSize: 14.0,
                         color: black,
                         fontWeight: FontWeight.w500),
-                    suffixIcon: const Icon(Icons.visibility, color: black),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        controller.showPass();
+                      },
+                      icon: Icon(
+                        controller.showPassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                    ),
                     border: InputBorder.none),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Campo 'senha' é obrigatório";
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  //   GetxLoginController.setSenha(val);
+                  //  widget.model.senha = val;
+                },
               ),
-            ),
+            )),
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:ache_facil/android/android_style.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -10,7 +11,7 @@ class CompetenciaBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: background,
           borderRadius: BorderRadiusDirectional.circular(2.h)),
       padding: EdgeInsets.all(2.h),
       width: double.infinity,
@@ -18,7 +19,8 @@ class CompetenciaBox extends StatelessWidget {
       child: Wrap(
         spacing: 2.h,
         children: const [
-          OutlinedButton(
+          ElevatedButton(
+            style: ButtonStyle(),
             onPressed: null,
             child: Text("Ferro"),
           ),

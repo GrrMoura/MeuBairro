@@ -1,3 +1,4 @@
+import 'package:ache_facil/android/android_style.dart';
 import 'package:ache_facil/models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -14,7 +15,7 @@ class HeaderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: background,
           borderRadius: BorderRadiusDirectional.circular(2.h)),
       margin: EdgeInsets.symmetric(horizontal: 2.h),
       child: Row(
@@ -43,12 +44,18 @@ class HeaderCard extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 2.h),
                   child: Text(
                     itemModel.name,
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline4!
+                        .copyWith(color: Colors.black),
                   ),
                 ),
                 Text(
                   itemModel.profession,
-                  style: Theme.of(context).textTheme.subtitle2,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline5!
+                      .copyWith(color: Colors.black),
                 )
               ],
             ),

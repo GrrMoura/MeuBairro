@@ -9,13 +9,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+  var model;
+  // LoginModel loginModel = LoginModel();
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
@@ -84,14 +87,17 @@ class _LoginPageState extends State<LoginPage> {
                         //email and password TextField here
                         Expanded(
                           flex: 4,
-                          child: Column(
-                            children: [
-                              EmailTextField(size),
-                              const SizedBox(height: 8),
-                              PasswordTextField(size),
-                              const SizedBox(height: 16),
-                              BtnRememberMe()
-                            ],
+                          child: Form(
+                            key: _formKey,
+                            child: Column(
+                              children: [
+                                EmailTextField(model, emailController, size),
+                                const SizedBox(height: 8),
+                                PasswordTextField(_formKey, size),
+                                const SizedBox(height: 16),
+                                BtnRememberMe()
+                              ],
+                            ),
                           ),
                         ),
 
@@ -100,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                           flex: 2,
                           child: Column(
                             children: [
-                              SignInButton(size: size),
+                              SignInButton(model, size: size),
                               const SizedBox(height: 20),
                               buildContinueText(),
                             ],

@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ache_facil/android/android_style.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class SearchTextField extends StatefulWidget {
   final String text;
@@ -24,27 +26,29 @@ class _SearchTextFieldState extends State<SearchTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
-      width: 250,
-
+      height: 6.h,
+      width: 91.w,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15), color: Colors.white),
-      //padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
-      margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+          borderRadius: BorderRadius.circular(2.h), color: Colors.white),
+      margin: EdgeInsets.fromLTRB(2.h, 2.h, 2.h, 2.h),
       child: TextField(
-        style: Theme.of(context).textTheme.headline4,
+        style: Theme.of(context)
+            .textTheme
+            .headline4!
+            .copyWith(color: Colors.black),
         cursorColor: Theme.of(context).colorScheme.secondary,
-        cursorHeight: 26,
+        cursorHeight: 3.6.h,
         textAlign: TextAlign.start,
         controller: controller,
         decoration: InputDecoration(
           prefixIcon: Icon(Icons.search,
-              size: 25,
+              size: 3.5.h,
               color: Theme.of(context).colorScheme.secondary.withOpacity(0.4)),
           hintText: widget.hintText,
-          labelStyle: Theme.of(context).textTheme.headline5,
+          labelStyle:
+              Theme.of(context).textTheme.headline5!.copyWith(color: black),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(2.h),
           ),
         ),
         onChanged: widget.onChanged,

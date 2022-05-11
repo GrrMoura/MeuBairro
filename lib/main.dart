@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:ache_facil/android/android_app.dart';
-import 'package:ache_facil/data/sflite.dart';
 import 'package:ache_facil/ios/ios_app.dart';
-import 'package:ache_facil/models/favorite_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   // var db = DatabaseConnect();
   // await db.insertFavorite(FavoriteModel(
   //     idItem: 0,

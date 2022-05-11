@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignInButton extends StatelessWidget {
-  const SignInButton({Key? key, required this.size}) : super(key: key);
+  var model;
+
+  SignInButton(this.model, {Key? key, required this.size}) : super(key: key);
 
   final Size size;
 
@@ -13,10 +15,9 @@ class SignInButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    DefaultTabController(length: 3, child: TabsPage())));
+          context,
+          MaterialPageRoute(builder: (context) => TabsPage()),
+        );
       },
       child: Container(
         alignment: Alignment.center,

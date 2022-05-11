@@ -10,9 +10,4 @@ class Historico {
   Map<String, dynamic> toMap() {
     return {'id': id, 'name': name};
   }
-
-  @override
-  String toString() {
-    return "$name";
-  }
 }

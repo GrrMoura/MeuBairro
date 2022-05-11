@@ -4,9 +4,7 @@ import 'package:sizer/sizer.dart';
 
 class HeaderHome extends StatelessWidget {
   var db = DatabaseConnect();
-  HeaderHome({
-    Key? key,
-  }) : super(key: key);
+  HeaderHome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +28,6 @@ class HeaderHome extends StatelessWidget {
                 ),
               )
             ],
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(5.7.h, 9.h, 3.h, 2.h),
-          child: Text(
-            "Precisa de profissional ou comércio?",
-            style: Theme.of(context).textTheme.headline6!,
           ),
         ),
       ],

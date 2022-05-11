@@ -1,3 +1,4 @@
+import 'package:ache_facil/android/android_style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -33,7 +34,7 @@ class HeaderLoginPage extends StatelessWidget {
           TextSpan(
             text: 'TEM',
             style: TextStyle(
-              color: Color(0xFFFE9879),
+              color: background,
               fontWeight: FontWeight.w800,
             ),
           ),

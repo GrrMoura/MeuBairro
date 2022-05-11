@@ -17,6 +17,14 @@ class DetailItemPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            itemModel.name,
+            style: Theme.of(context)
+                .textTheme
+                .subtitle2!
+                .copyWith(color: Colors.black),
+          ),
           elevation: 0,
           iconTheme: IconTheme.of(context),
           backgroundColor: Theme.of(context).primaryColor),

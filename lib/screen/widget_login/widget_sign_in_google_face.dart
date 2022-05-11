@@ -1,6 +1,8 @@
+import 'package:ache_facil/android/android_style.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 class SigniInGoogleFacebook extends StatelessWidget {
   const SigniInGoogleFacebook({Key? key, required this.size}) : super(key: key);
@@ -21,7 +23,7 @@ class SigniInGoogleFacebook extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10.0),
-            border: Border.all(width: 1.0),
+            border: Border.all(width: 0.5.h, color: background),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +47,7 @@ class SigniInGoogleFacebook extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10.0),
-            border: Border.all(color: Colors.white),
+            border: Border.all(width: 0.5.h, color: background),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

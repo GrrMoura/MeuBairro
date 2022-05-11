@@ -31,6 +31,7 @@ class ItemViewModel extends ItemModel {
             facebook: facebook,
             whatsapp: whatsapp);
 
+  @override
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['profession'] = profession;

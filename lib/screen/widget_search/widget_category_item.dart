@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class CategoryItem extends StatelessWidget {
@@ -9,13 +10,16 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
-      padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
+      width: 30.w,
+      padding: EdgeInsets.only(
+        left: 2.h,
+        top: 2.h,
+      ),
       child: ElevatedButton(
         style: TextButton.styleFrom(
             elevation: 5,
             splashFactory: InkRipple.splashFactory,
-            primary: Colors.redAccent,
+            primary: const Color(0xf3FF6700),
             backgroundColor:
                 Theme.of(context).backgroundColor), // const Color(0xfffffafa)),
         onPressed: () {},
@@ -24,8 +28,8 @@ class CategoryItem extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Icon(icon, size: 25),
-              const SizedBox(height: 5),
+              Icon(icon, size: 3.h),
+              SizedBox(height: 0.5.h),
               Text(
                 label,
                 style: const TextStyle(color: Colors.black),
