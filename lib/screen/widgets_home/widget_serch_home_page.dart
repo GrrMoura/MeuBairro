@@ -42,7 +42,7 @@ class _SearchHomeState extends State<SearchHome> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
+        const Text(
           "Escolha seu Estado, município e bairro",
           style: TextStyle(fontSize: 20),
         ),

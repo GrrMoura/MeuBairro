@@ -25,8 +25,8 @@ class DeviceServices {
       } else if (Platform.isIOS) {
         return _readIosDeviceInfo(await dispositivoInfoPlugin.iosInfo);
       }
-    } catch (Exc) {
-      print(Exc);
+    } catch (exc) {
+      print(exc);
     }
   }
 

@@ -1,5 +1,11 @@
 import 'package:ache_facil/android/android_style.dart';
+import 'package:ache_facil/services/autentiction_service.dart';
+import 'package:ache_facil/util/toasts/generic_toast.dart';
+import 'package:ache_facil/view_models/login_view_model.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -25,16 +31,20 @@ class SigniInGoogleFacebook extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             border: Border.all(width: 0.5.h, color: background),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(FontAwesomeIcons.google, color: Colors.red),
-              const SizedBox(width: 16),
-              //google txt
-              Text('Google',
-                  style: GoogleFonts.inter(fontSize: 14.0, color: Colors.black),
-                  textAlign: TextAlign.center),
-            ],
+          child: InkWell(
+            onTap: () async {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(FontAwesomeIcons.google, color: Colors.red),
+                const SizedBox(width: 16),
+                //google txt
+                Text('Google',
+                    style:
+                        GoogleFonts.inter(fontSize: 14.0, color: Colors.black),
+                    textAlign: TextAlign.center),
+              ],
+            ),
           ),
         ),
         const SizedBox(width: 16),

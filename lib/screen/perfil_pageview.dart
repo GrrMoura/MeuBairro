@@ -1,9 +1,10 @@
 import 'package:ache_facil/data/sflite.dart';
 import 'package:ache_facil/models/user_model.dart';
-import 'package:ache_facil/screen/widget_perfil/widget_favoritos_itens.dart';
 import 'package:ache_facil/screen/widget_search/widget_serch.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
+import 'shared_widget/widget_favoritos_itens.dart';
 
 class PerfilPage extends StatelessWidget {
   final UserModel model = UserModel();
