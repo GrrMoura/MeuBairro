@@ -1,32 +1,29 @@
-import 'package:flutter/material.dart';
+import 'package:ache_facil/util/toasts/generic_toast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Launcher {
   static Future<void> link(String url) async {
-    if (await canLaunch(url)) {
-      launch(url);
-    } else {
-      debugPrint("TEXTO PARA DIZER QUE NAO PODE ABRIR O LINK $url");
-    }
+    final Uri newUri = Uri.parse(url);
+    await canLaunch(newUri);
   }
 
   static Future<void> email(String email) async {
-    final Uri params = Uri(scheme: 'mailto', path: email);
-    String urlSetada = params.toString();
-    if (await canLaunch(urlSetada)) {
-      launch(urlSetada);
-    } else {
-      debugPrint("TEXTO PARA DIZER QUE NAO PODE ABRIR O LINK $urlSetada");
-    }
+    final Uri newUri = Uri(scheme: 'mailto', path: email);
+    await canLaunch(newUri);
   }
 
   static Future<void> whats(String phone) async {
     String whatsMessage = "Olá, tudo bem?\nte achei no app meu BairroTem. ";
-    String whatsAppUrl = "https://wa.me/$phone/?text=$whatsMessage";
+    Uri newUri = Uri.parse("https://wa.me/$phone/?text=$whatsMessage");
 
-    await canLaunch(whatsAppUrl)
-        ? launch(whatsAppUrl)
-        : debugPrint(
-            "open whatsapp app link or do a snackbar with notification that there is no whatsapp installed");
+    await canLaunch(newUri);
+  }
+
+  static Future<void> canLaunch(Uri newUri) async {
+    if (!await canLaunchUrl(newUri)) {
+      launchUrl(newUri);
+    } else {
+      GenericToast.show("Não foi possível abrir o link");
+    }
   }
 }

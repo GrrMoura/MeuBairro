@@ -19,8 +19,8 @@ class HeaderLoginPage extends StatelessWidget {
   Widget richText(double fontSize) {
     return Text.rich(
       TextSpan(
-        style: GoogleFonts.inter(
-          fontSize: 23.12,
+        style: GoogleFonts.kalam(
+          fontSize: 25.12,
           color: Colors.white,
           letterSpacing: 1.999999953855673,
         ),

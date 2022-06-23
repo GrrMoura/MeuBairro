@@ -15,7 +15,7 @@ class Sessao {
     id = json['id'];
   }
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['token'] = tokenSessao;
     data['usuario'] = usuario;
     data['id'] = id;
@@ -26,8 +26,6 @@ class Sessao {
   Sessao.getSession(SharedPreferences prefs) {
     tokenSessao = prefs.getString("token") ?? "";
     usuario = prefs.getString('usuario') ?? "";
-    id = prefs.getInt('id') ?? 0;
-    cpf = prefs.getString("cpf") ?? "";
   }
 
   void setSession(SharedPreferences prefs, LoginViewModel model) {

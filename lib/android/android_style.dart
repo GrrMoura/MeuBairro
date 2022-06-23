@@ -14,20 +14,20 @@ ThemeData androidTheme() {
       textTheme: TextTheme(
         headline1: const TextStyle(
             color: accentColor, fontSize: 31, fontFamily: "Lato"),
-        headline2: const TextStyle(
-            color: accentColor, fontSize: 26, fontFamily: "Lato"),
-        headline3: GoogleFonts.inter(
-            fontSize: 15.sp, color: Colors.white, letterSpacing: 1),
-        headline4: GoogleFonts.inter(
-            fontSize: 14.sp, color: Colors.white, letterSpacing: 1),
-        headline5: GoogleFonts.inter(
-            fontSize: 13.sp, color: Colors.white, letterSpacing: 1),
-        headline6: GoogleFonts.inter(
-            fontSize: 12.sp, color: Colors.white, letterSpacing: 1),
-        subtitle2: GoogleFonts.inter(
-            fontSize: 20.sp, color: Colors.white, letterSpacing: 1),
-        subtitle1: GoogleFonts.inter(
-            fontSize: 22.sp, color: Colors.white, letterSpacing: 1),
+        headline2: GoogleFonts.kalam(
+            fontSize: 18.sp, color: Colors.black, letterSpacing: 1),
+        headline3: GoogleFonts.kalam(
+            fontSize: 15.sp, color: Colors.black, letterSpacing: 1),
+        headline4: GoogleFonts.kalam(
+            fontSize: 13.sp, color: Colors.black, letterSpacing: 1),
+        headline5: GoogleFonts.kalam(
+            fontSize: 11.sp, color: Colors.black, letterSpacing: 1),
+        headline6: GoogleFonts.kalam(
+            fontSize: 9.sp, color: Colors.black, letterSpacing: 1),
+        subtitle2: GoogleFonts.kalam(
+            fontSize: 20.sp, color: Colors.black, letterSpacing: 1),
+        subtitle1: GoogleFonts.kalam(
+            fontSize: 22.sp, color: Colors.black, letterSpacing: 1),
       ),
       backgroundColor: background,
       primaryColor: primaryColor,

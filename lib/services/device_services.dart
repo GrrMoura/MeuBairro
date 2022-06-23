@@ -1,8 +1,9 @@
 import 'dart:io';
-
 import 'package:ache_facil/models/dispositivo_model.dart';
+import 'package:ache_facil/util/toasts/generic_toast.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:get/route_manager.dart';
 
 class DeviceServices {
   static Future<bool> checkConnection() async {
@@ -10,7 +11,6 @@ class DeviceServices {
 
     if (connectivityResult == ConnectivityResult.mobile ||
         connectivityResult == ConnectivityResult.wifi) {
-      print("connectivityResult $connectivityResult");
       return true;
       // I am connected to a mobile network.
     }
@@ -26,8 +26,11 @@ class DeviceServices {
         return _readIosDeviceInfo(await dispositivoInfoPlugin.iosInfo);
       }
     } catch (exc) {
-      print(exc);
+      GenericToast.show(
+          "Não foi possível carregar as informações do seu dispositivo");
+      Get.back;
     }
+    return null;
   }
 
   static Future<DeviceModel> _readAndroidBuildData(

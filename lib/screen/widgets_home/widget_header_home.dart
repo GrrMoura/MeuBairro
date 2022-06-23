@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class HeaderHome extends StatelessWidget {
-  var db = DatabaseConnect();
+  final db = DatabaseConnect(); //troquei var por final
   HeaderHome({Key? key}) : super(key: key);
 
   @override
@@ -17,15 +17,13 @@ class HeaderHome extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Olá,\nZé Ramalho",
-                  style: Theme.of(context).textTheme.subtitle2),
-              InkWell(
-                onTap: () {
-                  db.deleteAll();
-                },
-                child: CircleAvatar(
-                  radius: 7.h,
-                  backgroundImage: const AssetImage("assets/images/ze.jpg"),
-                ),
+                  style: Theme.of(context)
+                      .textTheme
+                      .subtitle2!
+                      .copyWith(color: Colors.white)),
+              CircleAvatar(
+                radius: 7.h,
+                backgroundImage: const AssetImage("assets/images/ze.jpg"),
               )
             ],
           ),

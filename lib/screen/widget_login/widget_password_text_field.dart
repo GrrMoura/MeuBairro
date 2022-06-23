@@ -4,47 +4,51 @@ import 'package:ache_facil/android/android_style.dart';
 import 'package:ache_facil/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 class PasswordTextField extends StatelessWidget {
   final GetxLoginController controller = Get.put(GetxLoginController());
 
-  final size;
-  var model; // = loginViewModel;
-  PasswordTextField(this.model, this.size, {Key? key}) : super(key: key);
+  final String title;
+  TextEditingController ctrl;
+  var heightScren;
+  var widthScren;
+  PasswordTextField(this.title, this.ctrl, this.heightScren, this.widthScren,
+      {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final style = Theme.of(context).textTheme;
     return Container(
       alignment: Alignment.center,
-      height: size.height / 12,
+      height: heightScren * 0.07,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0), color: background),
+          borderRadius: BorderRadius.circular(1.5.h), color: background),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: EdgeInsets.symmetric(horizontal: widthScren * 0.04),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             //lock logo here
             const Icon(Icons.lock, color: black),
-            const SizedBox(width: 32),
+            SizedBox(width: widthScren * 0.10),
 
             //password textField
             Expanded(
                 child: GetBuilder<GetxLoginController>(
               builder: (controller) => TextFormField(
+                controller: ctrl,
+                cursorHeight: heightScren * 0.03,
                 obscureText: controller.showPassword,
                 maxLines: 1,
                 cursorColor: black,
                 keyboardType: TextInputType.text,
-                style: GoogleFonts.inter(
-                    fontSize: 14.0, color: black, fontWeight: FontWeight.w500),
+                style: style.headline4!.copyWith(fontSize: heightScren * 0.025),
                 decoration: InputDecoration(
                     hintText: 'Entre com sua senha',
-                    hintStyle: GoogleFonts.inter(
-                        fontSize: 14.0,
-                        color: black,
-                        fontWeight: FontWeight.w500),
+                    hintStyle:
+                        style.headline4!.copyWith(fontSize: heightScren * 0.02),
                     suffixIcon: IconButton(
                       onPressed: () {
                         controller.showPass();
@@ -58,7 +62,9 @@ class PasswordTextField extends StatelessWidget {
                     border: InputBorder.none),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return "Campo 'senha' é obrigatório";
+                    return null;
+                  } else if (value.length < 6) {
+                    return null;
                   }
                   return null;
                 },

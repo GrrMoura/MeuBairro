@@ -10,11 +10,8 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 30.w,
-      padding: EdgeInsets.only(
-        left: 2.h,
-        top: 2.h,
-      ),
+      width: 34.w,
+      padding: EdgeInsets.only(right: 1.5.h, top: 1.h),
       child: ElevatedButton(
         style: TextButton.styleFrom(
             elevation: 5,
@@ -24,16 +21,16 @@ class CategoryItem extends StatelessWidget {
                 Theme.of(context).backgroundColor), // const Color(0xfffffafa)),
         onPressed: () {},
         child: Padding(
-          padding: const EdgeInsets.only(top: 8.0, bottom: 2),
+          padding: EdgeInsets.only(top: 1.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Icon(icon, size: 3.h),
-              SizedBox(height: 0.5.h),
-              Text(
-                label,
-                style: const TextStyle(color: Colors.black),
-              )
+              Icon(icon, size: 3.5.h),
+              Text(label,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
+                      .copyWith(fontSize: 8.sp))
             ],
           ),
         ),

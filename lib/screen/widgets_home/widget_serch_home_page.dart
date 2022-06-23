@@ -3,7 +3,7 @@ import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class SearchHome extends StatefulWidget {
-  SearchHome({Key? key}) : super(key: key);
+  const SearchHome({Key? key}) : super(key: key);
 
   @override
   State<SearchHome> createState() => _SearchHomeState();
@@ -53,7 +53,7 @@ class _SearchHomeState extends State<SearchHome> {
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Colors.black)),
             width: 100,
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             child: DropdownButton<String>(
               value: estadoInicial,
               items: listaStringEstado.map(buildMenuItem).toList(),

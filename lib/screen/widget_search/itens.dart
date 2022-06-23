@@ -61,17 +61,10 @@ class _ItensState extends State<Itens> {
                                         DetailItemPage(widget.itemModel)));
                           },
                           child: Text(widget.itemModel.name,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline6!
-                                  .copyWith(color: black)),
+                              style: Theme.of(context).textTheme.headline4!),
                         ),
                         Text(widget.itemModel.profession,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline6!
-                                .copyWith(fontSize: 9.sp)
-                                .copyWith(color: black)),
+                            style: Theme.of(context).textTheme.headline5!),
                       ],
                     ),
                   ),
@@ -105,7 +98,7 @@ class _ItensState extends State<Itens> {
                             itemModel: widget.itemModel.whatsapp,
                             color: Colors.black,
                             opcao: "whats"),
-                        Container(width: 18.w),
+                        Container(width: 15.w),
                         IconButton(
                             onPressed: () {
                               db.insertFavorite(FavoriteModel(
@@ -141,11 +134,7 @@ class _ItensState extends State<Itens> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(widget.itemModel.district,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6!
-                        .copyWith(fontSize: 9.sp)
-                        .copyWith(color: black)),
+                    style: Theme.of(context).textTheme.headline5!),
               ],
             ),
           ),

@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 
 import '../view_models/login_view_model.dart';
 
-class AutenticacaoService {
+class AuthenticationService {
   static Future<Response?> logar(LoginViewModel loginViewModel) async {
     var dispositivo = await DeviceServices.carregarInformacoesDispositivo();
     if (dispositivo == null) {
@@ -16,17 +16,17 @@ class AutenticacaoService {
           requestOptions: RequestOptions(path: ""));
     }
     // Iniciar Sessao do aplicativo
-    var responseSessaoIniciar = await iniciarSessao(
-      loginViewModel,
-    );
-    if (responseSessaoIniciar.statusCode != 200) {
+    var responseSessaoIniciar = await iniciarSessao(loginViewModel);
+
+    if (responseSessaoIniciar.statusCode == 200) {
       return responseSessaoIniciar;
     }
     return null;
   }
 
   static Future<Response> iniciarSessao(LoginViewModel loginViewModel) async {
-    var url = ApiServices.concatIntranetUrl("Sessoes/Iniciar");
+    //var url = ApiServices.concatIntranetUrl("");
+    var url = "https://api.adviceslip.com/advice";
 
     var responseIniciarSessao =
         await RequestsServices.post(url, loginViewModel.toJson());

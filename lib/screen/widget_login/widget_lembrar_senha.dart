@@ -2,8 +2,6 @@ import 'package:ache_facil/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:google_fonts/google_fonts.dart';
-
 class BtnRememberMe extends StatelessWidget {
   final GetxLoginController controller = Get.put(GetxLoginController());
 
@@ -11,6 +9,7 @@ class BtnRememberMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final style = Theme.of(context).textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
@@ -24,14 +23,8 @@ class BtnRememberMe extends StatelessWidget {
             activeColor: Theme.of(context).backgroundColor,
           ),
         ),
-        Text(
-          'Lembre-me',
-          style: GoogleFonts.inter(
-            fontSize: 14.0,
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        Text('Lembre-me',
+            style: style.headline5!.copyWith(color: Colors.white)),
       ],
     );
   }

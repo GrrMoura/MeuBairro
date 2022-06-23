@@ -1,12 +1,13 @@
 import 'package:ache_facil/android/android_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class SearchPrincipal extends StatelessWidget {
   TextEditingController controller = TextEditingController();
-
+  final _formKey = GlobalKey<FormState>();
   SearchPrincipal({Key? key}) : super(key: key);
 
   @override
@@ -14,23 +15,35 @@ class SearchPrincipal extends StatelessWidget {
     return Container(
       height: 7.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.h),
-        color: Colors.white,
-      ),
+          borderRadius: BorderRadius.circular(20.h),
+          color: Colors.white,
+          border: Border.all(color: background, width: 0.5.h)),
       margin: EdgeInsets.symmetric(horizontal: 3.h),
       child: TextFormField(
-        onFieldSubmitted: (value) {},
-        style: Theme.of(context).textTheme.headline4!.copyWith(color: black),
+        key: _formKey,
+        onTap: (() {
+          if (_formKey.currentState!.validate()) {
+            _formKey.currentState!.save();
+          }
+        }),
+        textInputAction: TextInputAction.search,
+        onFieldSubmitted: (value) {
+          print("Aqui o código de pesquisa");
+        },
+        style: Theme.of(context)
+            .textTheme
+            .headline4!
+            .copyWith(color: Colors.black, height: 0.25.h),
         cursorColor: Theme.of(context).colorScheme.secondary,
-        cursorHeight: 3.h,
-        textAlign: TextAlign.left,
+        cursorHeight: 4.h,
+        textAlign: TextAlign.center,
         inputFormatters: <TextInputFormatter>[
           LengthLimitingTextInputFormatter(23)
         ],
         controller: controller,
         decoration: InputDecoration(
-          suffixIcon: Icon(Icons.mic,
-              size: 3.h,
+          suffixIcon: Icon(FontAwesomeIcons.x,
+              size: 2.h,
               color: Theme.of(context).colorScheme.secondary.withOpacity(0.6)),
           prefixIcon: IconButton(
             onPressed: () {},
@@ -39,11 +52,10 @@ class SearchPrincipal extends StatelessWidget {
                 color:
                     Theme.of(context).colorScheme.secondary.withOpacity(0.6)),
           ),
-          hintText: 'Ache aqui',
-          hintStyle: Theme.of(context)
-              .textTheme
-              .headline4!
-              .copyWith(color: Colors.black54),
+          hintText: 'Encontre aqui',
+          hintStyle: Theme.of(context).textTheme.headline4!.copyWith(
+                color: Colors.black54,
+              ),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.h)),
         ),
       ),
