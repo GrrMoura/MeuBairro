@@ -42,7 +42,7 @@ class _ItensState extends State<Itens> {
                   onExpansionChanged: (value) {
                     setState(() {
                       if (value) {
-                        color = Colors.white;
+                        color = Colors.red;
                       } else {
                         color = background;
                       }
@@ -98,7 +98,7 @@ class _ItensState extends State<Itens> {
                             itemModel: widget.itemModel.whatsapp,
                             color: Colors.black,
                             opcao: "whats"),
-                        Container(width: 15.w),
+                        Container(width: 13.w),
                         IconButton(
                             onPressed: () {
                               db.insertFavorite(FavoriteModel(

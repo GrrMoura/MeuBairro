@@ -19,7 +19,7 @@ class _TabsPageState extends State<TabsPage> {
   final screens = [
     HomePage(),
     const SearchPage(),
-    FavoritePage(),
+    const FavoritePage(),
     const PerfilPage(),
   ];
 

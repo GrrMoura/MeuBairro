@@ -12,7 +12,7 @@ class HeaderHome extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 5.h, top: 5.h, right: 5.h),
+          padding: EdgeInsets.only(left: 5.h, right: 5.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

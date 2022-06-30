@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+// ignore: must_be_immutable
 class PasswordTextField extends StatelessWidget {
   final GetxLoginController controller = Get.put(GetxLoginController());
 

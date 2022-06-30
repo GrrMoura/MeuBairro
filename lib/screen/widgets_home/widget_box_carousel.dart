@@ -15,15 +15,12 @@ class BoxCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 45.h,
-      child: CarouselSlider(
-          items: imgList
-              .map((item) => Center(
-                  child: Image.asset(item, fit: BoxFit.cover, width: 80.h)))
-              .toList(),
-          options: CarouselOptions(
-              autoPlay: true, aspectRatio: 2.0, enlargeCenterPage: true)),
-    );
+    return CarouselSlider(
+        items: imgList
+            .map((item) => Center(
+                child: Image.asset(item, fit: BoxFit.cover, width: 80.w)))
+            .toList(),
+        options: CarouselOptions(
+            autoPlay: true, aspectRatio: 2.0, enlargeCenterPage: true));
   }
 }

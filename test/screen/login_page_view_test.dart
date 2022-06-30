@@ -1,7 +1,5 @@
 import 'package:ache_facil/screen/login_page_view.dart';
-import 'package:ache_facil/screen/widget_login/widget_email_text_field.dart';
 import 'package:ache_facil/screen/widget_login/widget_sign_in_google_face.dart';
-import 'package:ache_facil/view_models/login_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

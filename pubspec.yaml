@@ -38,7 +38,10 @@ dependencies:
   firebase_core: ^1.17.0
   dio: ^4.0.6
   flutter_overlay_loader: ^2.0.0
- 
+  table_calendar: ^3.0.6
+  intl: ^0.17.0
+  another_flushbar: ^1.10.29
+  mask_text_input_formatter: ^2.3.0
 
  
 

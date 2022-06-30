@@ -13,7 +13,7 @@ class AndroidApp extends StatelessWidget {
       return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: androidTheme(),
-          home: LoginPage());
+          home: const LoginPage());
     });
   }
 }

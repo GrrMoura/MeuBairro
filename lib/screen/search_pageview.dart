@@ -57,7 +57,7 @@ class _SearchPageState extends State<SearchPage> {
         SearchPrincipal(),
         searchContorller.showBairro == false
             ? Padding(
-                padding: const EdgeInsets.only(top: 8.0),
+                padding: const EdgeInsets.only(top: 8.0, bottom: 8),
                 child: SearchBairro(
                     text: "bairro",
                     onChanged: (_) {},

@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ache_facil/android/android_style.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -27,12 +28,12 @@ class _SearchBairroState extends State<SearchBairro> {
   Widget build(BuildContext context) {
     return Container(
       //TODO: a pesquisa principal trás do banco de dados e a de bairro filtra na tela
-      height: 7.h,
+
       width: 50.w,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.h),
-        color: Colors.white,
-      ),
+          borderRadius: BorderRadius.circular(20.h),
+          color: Colors.white,
+          border: Border.all(color: background, width: 0.5.h)),
 
       child: TextField(
         style: Theme.of(context)
@@ -40,15 +41,12 @@ class _SearchBairroState extends State<SearchBairro> {
             .headline4!
             .copyWith(color: Colors.black),
         cursorColor: Theme.of(context).colorScheme.secondary,
-        cursorHeight: 26,
-        textAlign: TextAlign.start,
+        textAlign: TextAlign.center,
         controller: controller,
         decoration: InputDecoration(
           hintText: widget.hintText,
           labelStyle: Theme.of(context).textTheme.headline5,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.h),
-          ),
+          border: OutlineInputBorder(borderSide: BorderSide.none),
         ),
         onChanged: widget.onChanged,
       ),

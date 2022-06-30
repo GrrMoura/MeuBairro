@@ -6,6 +6,14 @@ import 'package:get/state_manager.dart';
 
 class GetxSearchController extends GetxController {
   bool showBairro = true;
+  RxBool isEmpity = true.obs;
+  // RxString searchString.obs;
+
+  void change(bool boolean) {
+    isEmpity = boolean.obs;
+
+    update();
+  }
 }
 
 class SearchController {

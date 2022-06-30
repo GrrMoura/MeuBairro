@@ -9,31 +9,36 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 34.w,
-      padding: EdgeInsets.only(right: 1.5.h, top: 1.h),
-      child: ElevatedButton(
-        style: TextButton.styleFrom(
-            elevation: 5,
-            splashFactory: InkRipple.splashFactory,
-            primary: const Color(0xf3FF6700),
-            backgroundColor:
-                Theme.of(context).backgroundColor), // const Color(0xfffffafa)),
-        onPressed: () {},
-        child: Padding(
-          padding: EdgeInsets.only(top: 1.h),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Icon(icon, size: 3.5.h),
-              Text(label,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline6!
-                      .copyWith(fontSize: 8.sp))
-            ],
+    return Padding(
+      padding: EdgeInsets.only(left: 0.9.h),
+      child: Column(
+        children: [
+          ElevatedButton(
+            style: TextButton.styleFrom(
+                elevation: 5,
+                splashFactory: InkRipple.splashFactory,
+                primary: const Color(0xf3FF6700),
+                backgroundColor: Theme.of(context)
+                    .backgroundColor), // const Color(0xfffffafa)),
+            onPressed: () {},
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(icon, size: 3.5.h),
+                // Text(label,
+                //     style: Theme.of(context)
+                //         .textTheme
+                //         .headline6!
+                //         .copyWith(fontSize: 8.sp))
+              ],
+            ),
           ),
-        ),
+          Text(label,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6!
+                  .copyWith(fontSize: 6.sp))
+        ],
       ),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:ache_facil/services/api_service.dart';
 import 'package:ache_facil/services/device_services.dart';
 import 'package:ache_facil/services/request_service.dart';
 import 'package:dio/dio.dart';

@@ -1,24 +1,20 @@
 import 'package:ache_facil/android/android_style.dart';
 import 'package:ache_facil/controllers/authentication_controller.dart';
-import 'package:ache_facil/util/toasts/generic_toast.dart';
 import 'package:ache_facil/view_models/login_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class SignInButton extends StatelessWidget {
   LoginViewModel model;
-  final GlobalKey<FormState> _formKey;
+
   TextEditingController? emailCtrl;
   TextEditingController? passwordCtrl;
   //ver qual o tipo de model
   // final _autenticacaoController = AutenticacaoService();
 
-  SignInButton(this.model, this._formKey, this.emailCtrl, this.passwordCtrl,
-      {Key? key})
+  SignInButton(this.model, this.emailCtrl, this.passwordCtrl, {Key? key})
       : super(key: key);
 
   @override
