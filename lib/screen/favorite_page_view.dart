@@ -2,7 +2,7 @@
 
 import 'package:ache_facil/android/android_style.dart';
 import 'package:ache_facil/data/sflite.dart';
-import 'package:ache_facil/models/user_model.dart';
+import 'package:ache_facil/view_models/user_model.dart';
 import 'package:ache_facil/util/events.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -17,13 +17,13 @@ class FavoritePage extends StatefulWidget {
 }
 
 class _FavoritePageState extends State<FavoritePage> {
-  final UserModel model = UserModel();
+  final UserViewModel model = UserViewModel();
 
   final db = DatabaseConnect();
 
   late final ValueNotifier<List<Event>> _selectedEvents;
 
-  CalendarFormat _calendarFormat = CalendarFormat.month;
+  CalendarFormat _calendarFormat = CalendarFormat.twoWeeks;
 
   RangeSelectionMode _rangeSelectionMode = RangeSelectionMode.toggledOff;
   // Can be toggled on/off by longpressing a date
@@ -102,7 +102,7 @@ class _FavoritePageState extends State<FavoritePage> {
       child: Column(
         children: [
           const SizedBox(height: 20),
-          const Text("EVENTOS"),
+          Text("Eventos", style: Theme.of(context).textTheme.headline3),
           TableCalendar<Event>(
             locale: "pt_BR",
             firstDay: kFirstDay,

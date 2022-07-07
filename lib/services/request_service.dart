@@ -35,25 +35,41 @@ class RequestsServices {
     }
   }
 
-  // // static Future<Response> resetarSenhaService(
-  // //     String url, ResetarSenhaViewModel data) async {
-  // //   try {
-  // //     Dio dio = Dio(BaseOptions(connectTimeout: 60000, receiveTimeout: 60000));
-
-  // //     var response = await dio.post(url, data: data);
-
-  // //     return response;
-  // //   } on DioError catch (e) {
-  // //     if (e.response != null) {
-  // //       return e.response;
-  // //     } else {
-  // //       if (e.type == DioErrorType.connectTimeout ||
-  // //           e.type == DioErrorType.receiveTimeout) {
-  // //         return Response(statusCode: 504, requestOptions: null);
-  // //       } else {
-  // //         return Response(statusCode: 403, requestOptions: null);
-  // //       }
-  // //     }
-  // //   }
-  // }
+  static Future<Response?> postWithOptions(
+      {required String url,
+      Map<dynamic, dynamic>? data,
+      Options? headers}) async {
+    try {
+      Dio dio =
+          new Dio(BaseOptions(connectTimeout: 60000, receiveTimeout: 60000));
+      var response = await dio.post(url, data: data, options: headers);
+      return response;
+    } on DioError catch (e) {
+      if (e.response != null) {
+        // pegaErrosDio(e, e.response.statusMessage);
+        return e.response;
+      } else {
+        if (e.type == DioErrorType.connectTimeout ||
+            e.type == DioErrorType.receiveTimeout) {
+          var response = Response(
+              statusCode: 504,
+              requestOptions: RequestOptions(path: ""),
+              statusMessage:
+                  "Tempo para tentativa de conexão excedido, caso o erro persista entre em contato com a DTI");
+          // pegaErrosManipulados(response.statusCode.toString(), e.type,
+          //     response.statusMessage, e);
+          return response;
+        } else {
+          var response = Response(
+              statusCode: 403,
+              requestOptions: RequestOptions(path: ""),
+              statusMessage:
+                  "Não foi possível estabelecer conexão com o servidor do Disque denúncia, por favor, verifique se a internet é nula ou limitada e tente novamente");
+          // pegaErrosManipulados(response.statusCode.toString(), e.type,
+          //     response.statusMessage, e);
+          return response;
+        }
+      }
+    }
+  }
 }

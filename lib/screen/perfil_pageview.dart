@@ -2,7 +2,7 @@
 
 import 'package:ache_facil/android/android_style.dart';
 import 'package:ache_facil/data/sflite.dart';
-import 'package:ache_facil/models/user_model.dart';
+import 'package:ache_facil/view_models/user_model.dart';
 import 'package:ache_facil/util/marks.dart';
 import 'package:ache_facil/util/validators.dart';
 import 'package:flutter/material.dart';
@@ -16,15 +16,15 @@ class PerfilPage extends StatefulWidget {
 }
 
 class _PerfilPageState extends State<PerfilPage> {
-  final UserModel model = UserModel();
+  final UserViewModel model = UserViewModel();
 
-  final TextEditingController _phone = TextEditingController();
-  final TextEditingController _oldPass = TextEditingController();
-  final TextEditingController _newPass = TextEditingController();
-  final TextEditingController _confirmPass = TextEditingController();
-  final TextEditingController _name = TextEditingController();
+  final TextEditingController _phoneCtrl = TextEditingController();
+  final TextEditingController _oldPassCtrl = TextEditingController();
+  final TextEditingController _newPassCtrl = TextEditingController();
+  final TextEditingController _confirmPassCtrl = TextEditingController();
+  final TextEditingController _nameCtrl = TextEditingController();
   //final TextEditingController _gender = TextEditingController();
-  final TextEditingController _birthDate = TextEditingController();
+  final TextEditingController _birthDateCtrl = TextEditingController();
   final _formKeyDates = GlobalKey<FormState>();
   final _formKeyPass = GlobalKey<FormState>();
   final db = DatabaseConnect();
@@ -218,7 +218,7 @@ class _PerfilPageState extends State<PerfilPage> {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: TextFormField(
-          controller: _phone,
+          controller: _phoneCtrl,
           cursorColor: black,
           keyboardType: TextInputType.number,
           inputFormatters: [MaskUtils.maskFormatterPhone()],
@@ -244,6 +244,9 @@ class _PerfilPageState extends State<PerfilPage> {
             }
             return null;
           },
+          onSaved: (value) {
+            _phoneCtrl.text = value!;
+          },
         ));
   }
 
@@ -251,7 +254,7 @@ class _PerfilPageState extends State<PerfilPage> {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: TextFormField(
-          controller: _name,
+          controller: _nameCtrl,
           cursorColor: black,
           keyboardType: TextInputType.text,
           style: theme,
@@ -276,6 +279,9 @@ class _PerfilPageState extends State<PerfilPage> {
             }
             return null;
           },
+          onSaved: (value) {
+            _nameCtrl.text = value!;
+          },
         ));
   }
 
@@ -283,7 +289,7 @@ class _PerfilPageState extends State<PerfilPage> {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: TextFormField(
-          controller: _birthDate,
+          controller: _birthDateCtrl,
           cursorColor: black,
           inputFormatters: [MaskUtils.maskFormatterData()],
           keyboardType: TextInputType.datetime,
@@ -292,7 +298,7 @@ class _PerfilPageState extends State<PerfilPage> {
             errorStyle: theme.copyWith(fontSize: 12, color: Colors.white),
             labelStyle: theme,
             contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-            labelText: "Data de Nascimento:",
+            labelText: "*Data de Nascimento:",
             focusedBorder: OutlineInputBorder(
                 borderSide: const BorderSide(color: black),
                 borderRadius: BorderRadius.circular(1.5.h)),
@@ -302,13 +308,16 @@ class _PerfilPageState extends State<PerfilPage> {
           ),
           validator: (value) {
             if (value!.isEmpty) {
-              return "* O campo nome é obrigatório.";
+              return "* O campo data de nascimento é obrigatório.";
             }
             if (!ValidatorsUtils.validateDate(value)) {
               return "* Data inválida.";
             }
 
             return null;
+          },
+          onSaved: (value) {
+            _birthDateCtrl.text = value!;
           },
         ));
   }
@@ -318,7 +327,7 @@ class _PerfilPageState extends State<PerfilPage> {
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: TextFormField(
           obscureText: showPass,
-          controller: _oldPass,
+          controller: _oldPassCtrl,
           cursorColor: black,
           keyboardType: TextInputType.text,
           style: theme,
@@ -343,6 +352,9 @@ class _PerfilPageState extends State<PerfilPage> {
             }
             return null;
           },
+          onSaved: (value) {
+            _oldPassCtrl.text = value!;
+          },
         ));
   }
 
@@ -351,7 +363,7 @@ class _PerfilPageState extends State<PerfilPage> {
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: TextFormField(
           obscureText: showPass,
-          controller: _newPass,
+          controller: _newPassCtrl,
           cursorColor: black,
           keyboardType: TextInputType.text,
           style: theme,
@@ -385,6 +397,9 @@ class _PerfilPageState extends State<PerfilPage> {
             }
             return null;
           },
+          onSaved: (value) {
+            _newPassCtrl.text = value!;
+          },
         ));
   }
 
@@ -393,7 +408,7 @@ class _PerfilPageState extends State<PerfilPage> {
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         child: TextFormField(
           obscureText: showPass,
-          controller: _confirmPass,
+          controller: _confirmPassCtrl,
           cursorColor: black,
           keyboardType: TextInputType.text,
           style: theme,
@@ -416,10 +431,13 @@ class _PerfilPageState extends State<PerfilPage> {
             if (value.length <= 7) {
               return "* Senha muito curta.";
             }
-            if (value != _newPass.text) {
+            if (value != _newPassCtrl.text) {
               return "* As senhas não conferem.";
             }
             return null;
+          },
+          onSaved: (value) {
+            _confirmPassCtrl.text = value!;
           },
         ));
   }
@@ -478,14 +496,17 @@ class _PerfilPageState extends State<PerfilPage> {
     // final prefs = await SharedPreferences.getInstance();
 
     // _email?.text = prefs.getString("email")!;
-    // _phone?.text = prefs.getString("phone")!;
-    // _name?.text = prefs.getString("name")!;
+    // _phoneCtrl?.text = prefs.getString("phone")!;
+    // _nameCtrl?.text = prefs.getString("name")!;
     // _gender?.text = prefs.getString("gender")!;
-    // _birthDate?.text = prefs.getString("birthDate")!;
+    // _birthDateCtrl?.text = prefs.getString("birthDate")!;
   }
 
   void personalDataValidate() {
     if (_formKeyDates.currentState!.validate()) {
+      print("olá eu sou ${_nameCtrl.text} e meu telefone é ${_phoneCtrl.text}");
+
+      //  UserController.updatePersonalData();
       print("tudo certo");
     } else {
       print("algo está errado");
